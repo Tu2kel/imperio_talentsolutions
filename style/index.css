@@ -42,6 +42,8 @@
       z-index: 1;
     }
 
+    
+
     .house-of-kel {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 700;
@@ -94,7 +96,8 @@
       margin: 0 0 40px 0;
       font-weight: 400;
       filter: drop-shadow(-3px -5px 9px rgba(0, 0, 0, 0.65));
-    }
+    }   
+
 
     .hero-divider {
       width: 150px;
@@ -566,3 +569,117 @@
       .hero-buttons, .cta-buttons { flex-direction: column; }
       .footer-column h3 { font-size: 28px; }
     }
+
+    /* Animated Shimmer Effect for Imperio and Talent Solutions */
+/* .hero-title {
+  background: linear-gradient(180deg, #e7aa51, #ffe499, #8d5a1b, #e7aa51, #ac7031);
+  background-size: 100% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(-3px -5px 11px rgba(0, 0, 0, 0.65));
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  background: linear-gradient(180deg, #e7aa51, #ffe499, #8d5a1b, #e7aa51, #ac7031);
+  background-size: 100% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 16px;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  filter: drop-shadow(-3px -5px 9px rgba(0, 0, 0, 0.65));
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position-y: 0%;
+  }
+  50% {
+    background-position-y: 100%;
+  }
+  100% {
+    background-position-y: 0%;
+  }
+} */
+
+/* End of Shimmer 👆 */
+
+/* .hero-title {
+  font-size: 140px;
+  letter-spacing: 12px;
+  margin: 0;
+  line-height: 1;
+  background: linear-gradient(to right, #8d5a1b, #e7aa51, #ffe499, #e7aa51, #8d5a1b);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(-3px -5px 11px rgba(0, 0, 0, 0.65));
+  animation: gradient 6s linear infinite;
+}
+
+.hero-subtitle {
+  font-size: 56px;
+  background: linear-gradient(to right, #8d5a1b, #e7aa51, #ffe499, #e7aa51, #8d5a1b);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 16px;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  filter: drop-shadow(-3px -5px 9px rgba(0, 0, 0, 0.65));
+  animation: gradient 6s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+} */
+
+.hero-title {
+  font-size: 140px;
+  letter-spacing: 12px;
+  margin: 0;
+  line-height: 1;
+  /* background: linear-gradient(to right, #8d5a1b, #e7aa51, #ffe499, #e7aa51, #8d5a1b); */
+  /* background: linear-gradient(to right, #8d5a1b, #e7aa51, #252020, #e7aa51, #8d5a1b); */
+  background: linear-gradient(to right, #5a3a0f, #8d5a1b, #e7aa51, #ffe499, #110f0f, #ffe499, #e7aa51, #8d5a1b, #5a3a0f);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(-3px -5px 11px rgba(0, 0, 0, 0.65));
+  animation: gradient 20s linear infinite;
+}
+
+/* .hero-subtitle {
+  font-size: 56px;
+  background: linear-gradient(to right, #5a3a0f, #8d5a1b, #e7aa51, #ffe499, #110f0f, #ffe499, #e7aa51, #8d5a1b, #5a3a0f );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 16px;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  filter: drop-shadow(-3px -5px 9px rgba(0, 0, 0, 0.65));
+  animation: gradient 22s linear infinite;
+} */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
