@@ -74,7 +74,7 @@
       background: #D4AF37;
     }
 
-    .hero-title {
+    /* .hero-title {
       font-size: 140px;
       letter-spacing: 12px;
       margin: 0;
@@ -84,7 +84,21 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       filter: drop-shadow(-3px -5px 11px rgba(0, 0, 0, 0.65));
-    }
+    } */
+
+    .hero-title {
+  font-size: 140px;
+  letter-spacing: 12px;
+  margin: 0;
+  line-height: 1;
+  background: linear-gradient(to right, #5a3a0f, #8d5a1b, #e7aa51, #ffe499, #110f0f, #ffe499, #e7aa51, #8d5a1b, #5a3a0f);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(-3px -5px 11px rgba(0, 0, 0, 0.65));
+  animation: gradient 20s linear infinite;
+}
 
     .hero-subtitle {
       font-size: 56px;
@@ -99,12 +113,39 @@
     }   
 
 
-    .hero-divider {
+    /* .hero-divider {
       width: 150px;
       height: 2px;
       background: #D4AF37;
       margin: 0 auto 50px;
-    }
+    } */
+
+    .hero-divider-luxury {
+  margin: 0 auto 50px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.arrow-left,
+.arrow-right,
+.arrow-center {
+  color: #D4AF37;
+  font-size: 20px;
+}
+
+.arrow-left {
+  transform: rotate(180deg);
+  display: inline-block;
+}
+
+.arrow-line {
+  height: 2px;
+  background: #D4AF37;
+  flex: 1;
+}
+
+.arrow-center {
+  margin: 0 8px;
+}
 
     .hero-headline {
       font-size: 28px;
@@ -645,21 +686,6 @@
   }
 } */
 
-.hero-title {
-  font-size: 140px;
-  letter-spacing: 12px;
-  margin: 0;
-  line-height: 1;
-  /* background: linear-gradient(to right, #8d5a1b, #e7aa51, #ffe499, #e7aa51, #8d5a1b); */
-  /* background: linear-gradient(to right, #8d5a1b, #e7aa51, #252020, #e7aa51, #8d5a1b); */
-  background: linear-gradient(to right, #5a3a0f, #8d5a1b, #e7aa51, #ffe499, #110f0f, #ffe499, #e7aa51, #8d5a1b, #5a3a0f);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(-3px -5px 11px rgba(0, 0, 0, 0.65));
-  animation: gradient 20s linear infinite;
-}
 
 /* .hero-subtitle {
   font-size: 56px;
