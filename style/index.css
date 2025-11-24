@@ -380,7 +380,8 @@
     }
 
     .founder-image {
-      width: 100%;
+      /* width: 100%; */
+      width: 45vw;
       height: auto;
       border: 4px solid #D4AF37;
     }
