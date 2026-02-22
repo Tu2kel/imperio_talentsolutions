@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperio Talent Solutions | SDVOSB Staffing & Supply</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-red: #5C0A0A;
+            --darker-red: #3D0606;
+            --darkest-red: #2A0404;
+            --gold: #C5A028;
+            --light-gold: #D4AF37;
+            --pale-gold: #E8D48B;
+            --bg-dark: #0C0C0C;
+            --bg-card: #161616;
+            --bg-card-alt: #1C1C1C;
+            --bg-section: #111111;
+            --white: #F0EDE6;
+            --off-white: #E0DCD4;
+            --light-gray: #C8C4BC;
+            --med-gray: #8A8680;
+            --dark-gray: #3A3A3A;
+            --link-blue: #7EB8E0;
+            --border-gold: rgba(197, 160, 40, 0.25);
+            --glow-gold: rgba(197, 160, 40, 0.08);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--light-gray);
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 17px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TOP BAR - Three Audience Buttons
+           ============================================ */
+        .top-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(12, 12, 12, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-gold);
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            transition: var(--transition);
+        }
+
+        .top-bar.scrolled {
+            background: rgba(12, 12, 12, 0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .top-bar-logo {
+            height: 36px;
+            width: auto;
+        }
+
+        .top-bar-wordmark {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        .top-bar-center {
+            display: flex;
+            gap: 6px;
+        }
+
+        .audience-btn {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--light-gray);
+            background: transparent;
+            border: 1px solid var(--dark-gray);
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .audience-btn:hover, .audience-btn.active {
+            color: var(--gold);
+            border-color: var(--gold);
+            background: var(--glow-gold);
+        }
+
+        .audience-btn.gov-btn {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .audience-btn.gov-btn:hover {
+            background: var(--gold);
+            color: var(--darkest-red);
+        }
+
+        /* ============================================
+           HAMBURGER MENU
+           ============================================ */
+        .hamburger {
+            width: 32px;
+            height: 22px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1100;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+            border-radius: 1px;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .nav-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1050;
+            background: rgba(12, 12, 12, 0.97);
+            backdrop-filter: blur(20px);
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .nav-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-overlay-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+        }
+
+        .nav-hero-img {
+            width: 100%;
+            max-width: 500px;
+            height: 70vh;
+            object-fit: cover;
+            border-radius: 4px;
+            opacity: 0.85;
+        }
+
+        .nav-overlay-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 8px;
+            transform: translateX(30px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .nav-overlay.open .nav-links li {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .nav-overlay.open .nav-links li:nth-child(1) { transition-delay: 0.1s; }
+        .nav-overlay.open .nav-links li:nth-child(2) { transition-delay: 0.15s; }
+        .nav-overlay.open .nav-links li:nth-child(3) { transition-delay: 0.2s; }
+        .nav-overlay.open .nav-links li:nth-child(4) { transition-delay: 0.25s; }
+        .nav-overlay.open .nav-links li:nth-child(5) { transition-delay: 0.3s; }
+        .nav-overlay.open .nav-links li:nth-child(6) { transition-delay: 0.35s; }
+        .nav-overlay.open .nav-links li:nth-child(7) { transition-delay: 0.4s; }
+
+        .nav-links a {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            transform: translateX(10px);
+        }
+
+        .nav-social {
+            margin-top: 50px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-social a {
+            font-family: 'Raleway', sans-serif;
+            font-size: 12px;
+            color: var(--med-gray);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-social a:hover { color: var(--gold); }
+
+        /* ============================================
+           PAGE SECTIONS
+           ============================================ */
+        .page-section {
+            display: none;
+            min-height: 100vh;
+            padding-top: 52px;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* ============================================
+           HOME PAGE
+           ============================================ */
+        .hero-section {
+            min-height: calc(100vh - 52px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--darkest-red) 50%, var(--bg-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 40%, rgba(197,160,40,0.04) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(197,160,40,0.08);
+            border: 1px solid var(--border-gold);
+            display: inline-block;
+            padding: 8px 24px;
+            margin-bottom: 30px;
+        }
+
+        .hero-h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            font-size: clamp(36px, 6vw, 72px);
+            color: var(--white);
+            letter-spacing: 6px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-h1 span {
+            color: var(--gold);
+        }
+
+        .hero-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: var(--light-gray);
+            font-style: italic;
+            margin-bottom: 40px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 16px 36px;
+            border: 1px solid var(--gold);
+            transition: var(--transition);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .cta-primary {
+            background: var(--gold);
+            color: var(--darkest-red);
+        }
+
+        .cta-primary:hover {
+            background: var(--pale-gold);
+            box-shadow: 0 0 30px rgba(197,160,40,0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .cta-secondary:hover {
+            background: var(--glow-gold);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator span {
+            font-family: 'Raleway', sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--med-gray);
+        }
+
+        .scroll-indicator .arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            transform: rotate(45deg);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ============================================
+           STATS BAR
+           ============================================ */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--border-gold);
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 35px 20px;
+            border-right: 1px solid var(--border-gold);
+        }
+
+        .stat-item:last-child { border-right: none; }
+
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            font-size: 36px;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--med-gray);
+            margin-top: 5px;
+        }
+
+        /* ============================================
+           CONTENT SECTIONS
+           ============================================ */
+        .section-block {
+            padding: 80px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background: var(--bg-section);
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: var(--med-gray);
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .gold-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .section-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: var(--light-gray);
+            line-height: 1.8;
+            max-width: 800px;
+        }
+
+        /* Verticals Grid */
+        .verticals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .vertical-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            padding: 30px 24px;
+            transition: var(--transition);
+        }
+
+        .vertical-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(197,160,40,0.08);
+        }
+
+        .vertical-card h3 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .vertical-card p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 13px;
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           WHO WE ARE PAGE
+           ============================================ */
+        .founder-section {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: start;
+            padding: 80px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .founder-photo {
+            width: 100%;
+            border: 2px solid var(--border-gold);
+        }
+
+        .founder-info h2 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .founder-info .founder-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            color: var(--med-gray);
+            margin-top: 4px;
+            margin-bottom: 25px;
+        }
+
+        .founder-info p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        /* ============================================
+           CAPABILITY STATEMENT PAGE
+           ============================================ */
+        .capstat-header {
+            background: linear-gradient(135deg, var(--darker-red) 0%, var(--deep-red) 50%, #6B1010 100%);
+            border-bottom: 3px solid var(--gold);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .capstat-header h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--gold);
+            letter-spacing: 4px;
+        }
+
+        .capstat-header p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 13px;
+            color: var(--off-white);
+            margin-top: 6px;
+        }
+
+        .capstat-download-bar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 16px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .download-btn-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--deep-red), var(--darker-red));
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 1px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .download-btn-small:hover {
+            background: var(--gold);
+            color: var(--darkest-red);
+        }
+
+        .download-btn-small svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Capability 3-col */
+        .capstat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 10px 40px 60px;
+        }
+
+        .cap-section { margin-bottom: 18px; }
+
+        .cap-section-header {
+            background: linear-gradient(135deg, var(--deep-red), var(--darker-red));
+            border: 1px solid var(--border-gold);
+            border-radius: 3px;
+            padding: 9px 14px;
+            margin-bottom: 12px;
+        }
+
+        .cap-section-header h3 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 11px;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cap-info-row {
+            display: flex;
+            padding: 3px 0;
+        }
+
+        .cap-info-label {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 11px;
+            color: var(--gold);
+            min-width: 60px;
+            flex-shrink: 0;
+        }
+
+        .cap-info-value {
+            font-family: 'Raleway', sans-serif;
+            font-size: 12.5px;
+            color: var(--white);
+        }
+
+        .cap-info-value a {
+            color: var(--link-blue);
+            text-decoration: none;
+        }
+
+        .cap-info-value a:hover { color: var(--pale-gold); }
+
+        .cap-info-value.codes {
+            font-size: 11.5px;
+            color: var(--light-gray);
+        }
+
+        .cap-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cap-list li {
+            font-family: 'Raleway', sans-serif;
+            font-size: 12.5px;
+            color: var(--light-gray);
+            padding: 3.5px 0 3.5px 14px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .cap-list li::before {
+            content: '\2022';
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            top: 3px;
+        }
+
+        .cap-qr {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .cap-qr img {
+            width: 120px;
+            height: 120px;
+        }
+
+        /* ============================================
+           CONTRACT VEHICLES PAGE
+           ============================================ */
+        .cv-header {
+            background: linear-gradient(135deg, var(--darker-red) 0%, var(--deep-red) 50%, #6B1010 100%);
+            border-bottom: 3px solid var(--gold);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .cv-header h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--gold);
+            letter-spacing: 4px;
+        }
+
+        .cv-header p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: var(--off-white);
+            font-style: italic;
+            margin-top: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cv-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 40px;
+        }
+
+        .cv-category {
+            margin-bottom: 50px;
+        }
+
+        .cv-category-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .cv-category-sub {
+            font-family: 'Raleway', sans-serif;
+            font-size: 13px;
+            color: var(--med-gray);
+            margin-bottom: 20px;
+        }
+
+        .cv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .cv-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            padding: 24px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .cv-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 20px rgba(197,160,40,0.06);
+        }
+
+        .cv-card .cv-status {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 2px;
+        }
+
+        .cv-status.active {
+            background: rgba(40, 167, 69, 0.15);
+            color: #5CB85C;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .cv-status.coming {
+            background: rgba(197, 160, 40, 0.1);
+            color: var(--gold);
+            border: 1px solid var(--border-gold);
+        }
+
+        .cv-card h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--white);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            padding-right: 70px;
+        }
+
+        .cv-card p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 13px;
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        .cv-card .cv-detail {
+            font-size: 11px;
+            color: var(--med-gray);
+            margin-top: 8px;
+        }
+
+        .cv-card .cv-detail strong {
+            color: var(--gold);
+        }
+
+        /* CTA banner */
+        .cv-cta {
+            background: linear-gradient(135deg, var(--deep-red), var(--darker-red));
+            border: 1px solid var(--border-gold);
+            padding: 40px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cv-cta h3 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .cv-cta p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+
+        /* ============================================
+           CONTACT PAGE
+           ============================================ */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .contact-info h2 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item .label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .contact-item .value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: var(--white);
+        }
+
+        .contact-item .value a {
+            color: var(--link-blue);
+            text-decoration: none;
+        }
+
+        .contact-item .value a:hover { color: var(--pale-gold); }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--dark-gray);
+            color: var(--white);
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            padding: 14px 16px;
+            margin-bottom: 14px;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .contact-form textarea { min-height: 140px; resize: vertical; }
+
+        .contact-form button {
+            width: 100%;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .site-footer {
+            background: var(--darkest-red);
+            border-top: 2px solid var(--gold);
+            padding: 40px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-left h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .footer-left p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 12px;
+            color: var(--light-gray);
+            margin-top: 4px;
+        }
+
+        .footer-left .footer-contact a {
+            color: var(--link-blue);
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-certs {
+            font-family: 'Cinzel', serif;
+            font-size: 10px;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .footer-copy {
+            font-family: 'Raleway', sans-serif;
+            font-size: 10px;
+            color: var(--med-gray);
+            margin-top: 6px;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 900px) {
+            .top-bar-center { display: none; }
+            .nav-overlay-left { display: none; }
+            .nav-overlay-right { padding: 100px 30px; }
+            .nav-links a { font-size: 24px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .capstat-grid { grid-template-columns: 1fr; }
+            .cv-grid { grid-template-columns: 1fr; }
+            .founder-section { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .footer-right { text-align: center; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-h1 { letter-spacing: 2px; }
+            .section-block { padding: 50px 20px; }
+            .cv-content { padding: 30px 20px; }
+            .capstat-grid { padding: 10px 20px 40px; }
+        }
+
+        /* Fade animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ TOP BAR ============ -->
+    <nav class="top-bar" id="topBar">
+        <div class="top-bar-left" onclick="showPage('home')">
+            <!-- Replace with hosted logo -->
+            <span class="top-bar-wordmark">IMPERIO</span>
+        </div>
+        <div class="top-bar-center">
+            <a class="audience-btn" href="employers.html" onclick="showPage('staffing'); return false;">Employers</a>
+            <a class="audience-btn" href="job-seekers.html" onclick="showPage('staffing'); return false;">Job Seekers</a>
+            <a class="audience-btn gov-btn" href="#" onclick="showPage('contract-vehicles'); return false;">Government Buyers</a>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- ============ NAV OVERLAY ============ -->
+    <div class="nav-overlay" id="navOverlay">
+        <div class="nav-overlay-left">
+            <!-- Replace with hero image of your choice -->
+            <div style="width:100%;max-width:400px;height:60vh;background:linear-gradient(135deg,var(--deep-red),var(--darker-red));display:flex;align-items:center;justify-content:center;">
+                <span style="font-family:'Cinzel',serif;font-size:48px;color:var(--gold);letter-spacing:6px;writing-mode:vertical-rl;text-orientation:mixed;">IMPERIO</span>
+            </div>
+        </div>
+        <div class="nav-overlay-right">
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home'); toggleMenu(); return false;">Home</a></li>
+                <li><a href="#" onclick="showPage('who-we-are'); toggleMenu(); return false;">Who We Are</a></li>
+                <li><a href="#" onclick="showPage('staffing'); toggleMenu(); return false;">Staffing</a></li>
+                <li><a href="#" onclick="showPage('procurement'); toggleMenu(); return false;">Procurement</a></li>
+                <li><a href="#" onclick="showPage('capability-statement'); toggleMenu(); return false;">Capability Statement</a></li>
+                <li><a href="#" onclick="showPage('contract-vehicles'); toggleMenu(); return false;">Contract Vehicles</a></li>
+                <li><a href="#" onclick="showPage('contact'); toggleMenu(); return false;">Contact</a></li>
+            </ul>
+            <div class="nav-social">
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HOME PAGE
+         ============================================================ -->
+    <div class="page-section active" id="page-home">
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge">Service-Disabled Veteran-Owned Small Business</div>
+                <h1 class="hero-h1">TALENT &amp; <span>SUPPLY</span><br>DELIVERED</h1>
+                <p class="hero-sub">Cleared workforce solutions and government product fulfillment — built on 21 years of military logistics leadership.</p>
+                <div class="hero-cta-group">
+                    <a class="cta-btn cta-primary" href="#" onclick="showPage('capability-statement'); return false;">View Capabilities</a>
+                    <a class="cta-btn cta-secondary" href="#" onclick="showPage('contact'); return false;">Contact Us</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="arrow"></div>
+            </div>
+        </section>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">21</div>
+                <div class="stat-label">Years Military Service</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$1.5B+</div>
+                <div class="stat-label">Managed Accountability</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Service Verticals</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">E-7</div>
+                <div class="stat-label">Retired Senior NCO</div>
+            </div>
+        </div>
+
+        <div class="section-dark">
+            <div class="section-block">
+                <h2 class="section-title">What We Do</h2>
+                <div class="gold-divider"></div>
+                <p class="section-text">Imperio Talent Solutions is a dual-capability SDVOSB providing recruiter-only talent sourcing and wholesale product fulfillment for government agencies, prime contractors, and defense organizations. We place cleared professionals and deliver TAA-compliant supplies — under one contract vehicle.</p>
+
+                <div class="verticals-grid">
+                    <div class="vertical-card">
+                        <h3>IT &amp; Cybersecurity</h3>
+                        <p>Cleared IT professionals and TAA-compliant hardware. From TS/SCI talent to laptops and networking equipment.</p>
+                    </div>
+                    <div class="vertical-card">
+                        <h3>Medical &amp; Healthcare</h3>
+                        <p>Healthcare staffing and medical supply fulfillment. PPE, surgical supplies, and clinical professionals.</p>
+                    </div>
+                    <div class="vertical-card">
+                        <h3>HVAC &amp; Trades</h3>
+                        <p>HVAC technicians, maintenance professionals, and parts/equipment procurement for government facilities.</p>
+                    </div>
+                    <div class="vertical-card">
+                        <h3>Logistics &amp; Supply Chain</h3>
+                        <p>Workforce solutions and office/operational supplies. The backbone that keeps missions running.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         WHO WE ARE PAGE
+         ============================================================ -->
+    <div class="page-section" id="page-who-we-are">
+        <div style="height:40px;background:var(--bg-dark);"></div>
+        <div class="section-dark">
+            <div class="founder-section">
+                <div>
+                    <!-- Replace with hosted headshot -->
+                    <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,var(--deep-red),var(--bg-card));display:flex;align-items:center;justify-content:center;border:1px solid var(--border-gold);">
+                        <span style="font-family:'Cinzel',serif;color:var(--gold);font-size:14px;letter-spacing:2px;">[HEADSHOT]</span>
+                    </div>
+                </div>
+                <div class="founder-info">
+                    <h2>Anthony K. Kelley Sr.</h2>
+                    <div class="founder-title">Founder &amp; CEO &nbsp;|&nbsp; 21-Year Army/Navy Veteran (E-7 Retired)</div>
+                    <div class="gold-divider"></div>
+                    <p>Imperio Talent Solutions was founded on a simple premise: the same discipline, accountability, and mission-first execution that drives military operations should drive how businesses source talent and fulfill supply requirements.</p>
+                    <p>With 21 years of combined Army and Navy service as an S4 Supply NCOIC, Anthony managed over $1.5 billion in equipment and supply accountability, led 70+ personnel, and coordinated procurement operations across multiple theaters. From ammunition handling to large-scale inventory management, his career was built on making sure the right resources reached the right people — on time, every time.</p>
+                    <p>That operational DNA is now the foundation of Imperio. Whether placing a cleared cybersecurity analyst at a DoD installation or fulfilling a $10K office supply order for a VA medical center, the approach is the same: clean communication, predictable follow-through, and zero overpromising.</p>
+                    <p>Imperio operates as a division of The House of Kel LLC, headquartered in Killeen, Texas, near Fort Cavazos — one of the largest military installations in the world.</p>
+
+                    <div style="margin-top:30px;padding:20px;border:1px solid var(--border-gold);background:var(--bg-card);">
+                        <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:10px;">CREDENTIALS</div>
+                        <div style="font-family:'Raleway',sans-serif;font-size:13px;color:var(--light-gray);line-height:1.8;">
+                            CompTIA Security+ &bull; AWS Cloud Practitioner &bull; ServiceNow Certified<br>
+                            Active Secret Clearance (through 2030)<br>
+                            Hazmat 61 &bull; Ammunition Handling Certified<br>
+                            SBA-Certified SDVOSB &bull; Texas VetHUB &bull; CMBL Registered
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         STAFFING PAGE
+         ============================================================ -->
+    <div class="page-section" id="page-staffing">
+        <div style="height:40px;background:var(--bg-dark);"></div>
+        <div class="section-dark">
+            <div class="section-block">
+                <h2 class="section-title">Staffing Solutions</h2>
+                <div class="section-subtitle">Recruiter-only talent sourcing across four critical verticals</div>
+                <div class="gold-divider"></div>
+                <p class="section-text" style="margin-bottom:40px;">Imperio delivers pre-vetted, qualified candidates through a recruiter-only model — no temp agencies, no body shops. We source, screen, and present professionals who are ready to contribute from day one. Our specialization in cleared and credentialed talent means faster placements with less risk.</p>
+
+                <div class="verticals-grid">
+                    <div class="vertical-card">
+                        <h3>IT &amp; Cybersecurity</h3>
+                        <p>Network engineers, cybersecurity analysts, systems administrators, help desk professionals, cloud architects. Secret, TS, and TS/SCI cleared candidates available.</p>
+                    </div>
+                    <div class="vertical-card">
+                        <h3>HVAC &amp; Trades</h3>
+                        <p>HVAC technicians, maintenance specialists, facilities engineers, and skilled trades professionals for government installations and commercial facilities.</p>
+                    </div>
+                    <div class="vertical-card">
+                        <h3>Medical &amp; Healthcare</h3>
+                        <p>Nurses, medical technicians, clinical support staff, and healthcare administrators. VA, DoD, and civilian healthcare facility placements.</p>
+                    </div>
+                    <div class="vertical-card">
+                        <h3>Logistics &amp; Supply Chain</h3>
+                        <p>Warehouse managers, logistics coordinators, procurement specialists, inventory control analysts, and transportation professionals.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top:50px;padding:30px;border:1px solid var(--border-gold);background:var(--bg-card);">
+                    <h3 style="font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:2px;margin-bottom:15px;">PLACEMENT MODELS</h3>
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+                        <div>
+                            <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--white);margin-bottom:6px;">DIRECT HIRE</div>
+                            <div style="font-family:'Raleway',sans-serif;font-size:12px;color:var(--light-gray);">Full-time permanent placements. One-time placement fee. Candidate is your employee from day one.</div>
+                        </div>
+                        <div>
+                            <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--white);margin-bottom:6px;">CONTRACT-TO-HIRE</div>
+                            <div style="font-family:'Raleway',sans-serif;font-size:12px;color:var(--light-gray);">Trial period on contract before converting to full-time. Reduces hiring risk.</div>
+                        </div>
+                        <div>
+                            <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--white);margin-bottom:6px;">CONTRACT STAFFING</div>
+                            <div style="font-family:'Raleway',sans-serif;font-size:12px;color:var(--light-gray);">Project-based or term-limited assignments. Flexible workforce scaling.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         PROCUREMENT PAGE
+         ============================================================ -->
+    <div class="page-section" id="page-procurement">
+        <div style="height:40px;background:var(--bg-dark);"></div>
+        <div class="section-dark">
+            <div class="section-block">
+                <h2 class="section-title">Procurement &amp; Supply</h2>
+                <div class="section-subtitle">TAA-compliant product fulfillment for government and prime contractor buyers</div>
+                <div class="gold-divider"></div>
+                <p class="section-text" style="margin-bottom:40px;">Imperio sources and delivers products through authorized wholesale distributors with established TAA-compliant product lines. All products meet federal Trade Agreements Act requirements. We offer drop-ship direct to your facility, quote-to-delivery in 1–5 business days, and accept GPC cards for micro-purchases under $10K.</p>
+
+                <div class="verticals-grid">
+                    <div class="vertical-card">
+                        <h3>IT Equipment</h3>
+                        <p>Laptops, desktops, monitors, peripherals, networking equipment, cables, and accessories. All TAA-compliant through authorized distributors.</p>
+                    </div>
+                    <div class="vertical-card">
+                        <h3>Office Supplies</h3>
+                        <p>Administrative materials, stationery, toner, paper, small equipment, breakroom supplies, and operational consumables.</p>
+                    </div>
+                    <div class="vertical-card">
+                        <h3>Medical &amp; PPE</h3>
+                        <p>Gloves, gowns, masks, surgical supplies, safety equipment, first aid, and infection control products.</p>
+                    </div>
+                    <div class="vertical-card">
+                        <h3>HVAC &amp; Facilities</h3>
+                        <p>HVAC parts, filters, maintenance supplies, janitorial products, safety gear, and MRO (Maintenance, Repair &amp; Operations) materials.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top:50px;padding:30px;border:1px solid var(--border-gold);background:var(--bg-card);">
+                    <h3 style="font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:2px;margin-bottom:15px;">HOW WE DELIVER</h3>
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;">
+                        <div style="text-align:center;">
+                            <div style="font-family:'Cinzel',serif;font-size:28px;color:var(--gold);">1</div>
+                            <div style="font-family:'Raleway',sans-serif;font-size:11px;color:var(--white);margin-top:6px;">RECEIVE YOUR REQUIREMENT</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-family:'Cinzel',serif;font-size:28px;color:var(--gold);">2</div>
+                            <div style="font-family:'Raleway',sans-serif;font-size:11px;color:var(--white);margin-top:6px;">SOURCE &amp; QUOTE FROM DISTRIBUTORS</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-family:'Cinzel',serif;font-size:28px;color:var(--gold);">3</div>
+                            <div style="font-family:'Raleway',sans-serif;font-size:11px;color:var(--white);margin-top:6px;">DROP-SHIP TO YOUR FACILITY</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-family:'Cinzel',serif;font-size:28px;color:var(--gold);">4</div>
+                            <div style="font-family:'Raleway',sans-serif;font-size:11px;color:var(--white);margin-top:6px;">INVOICE &amp; CONFIRM DELIVERY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         CAPABILITY STATEMENT PAGE
+         ============================================================ -->
+    <div class="page-section" id="page-capability-statement">
+        <div class="capstat-header">
+            <h1>CAPABILITY STATEMENT</h1>
+            <p>Staffing &amp; Supply Solutions &nbsp;|&nbsp; Federal &nbsp;|&nbsp; State &nbsp;|&nbsp; Prime Contractors</p>
+        </div>
+        <div class="capstat-download-bar">
+            <a class="download-btn-small" href="/wp-content/uploads/Imperio_Capabilities_Statement.pdf" download>
+                <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z"/></svg>
+                Download PDF
+            </a>
+        </div>
+
+        <div style="max-width:1100px;margin:0 auto;padding:0 40px 10px;">
+            <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--light-gray);line-height:1.7;">Service-disabled veteran-owned staffing and supply firm. Recruiter-only talent sourcing, cleared professional placement, and wholesale product fulfillment (IT equipment, medical/PPE, HVAC, office supplies) for government and prime contractor buyers.</p>
+        </div>
+
+        <div class="capstat-grid">
+            <!-- Column 1 -->
+            <div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Company Snapshot</h3></div>
+                    <div class="cap-info-row"><span class="cap-info-label">Legal:</span><span class="cap-info-value">The House of Kel LLC</span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">DBA:</span><span class="cap-info-value">Imperio Talent Solutions</span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">Founder:</span><span class="cap-info-value">Anthony K. Kelley Sr.</span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">Email:</span><span class="cap-info-value"><a href="mailto:anthony@imperiovita.co">anthony@imperiovita.co</a></span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">Phone:</span><span class="cap-info-value"><a href="tel:+12542265216">(254) 226-5216</a></span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">Web:</span><span class="cap-info-value"><a href="https://www.imperiovita.co">www.imperiovita.co</a></span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">UEI:</span><span class="cap-info-value">YCTTJHXH69A6</span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">CAGE:</span><span class="cap-info-value">152U4</span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">NAICS:</span><span class="cap-info-value codes">561311, 561320, 561110, 541519, 423430, 423450, 423720, 424120</span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">PSC:</span><span class="cap-info-value codes">R499, R430, B599, 6515, 4120, 7520, 7530</span></div>
+                    <div class="cap-info-row"><span class="cap-info-label">Service:</span><span class="cap-info-value">Nationwide</span></div>
+                </div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Staffing Capabilities</h3></div>
+                    <ul class="cap-list">
+                        <li>Cleared professional placement (Secret/TS/SCI)</li>
+                        <li>IT &amp; cybersecurity talent sourcing</li>
+                        <li>HVAC technician and trades staffing</li>
+                        <li>Healthcare and medical professional placement</li>
+                        <li>Logistics &amp; supply chain workforce solutions</li>
+                        <li>Veteran transition employment support</li>
+                        <li>Candidate screening, vetting, and compliance</li>
+                        <li>Direct-hire and contract-to-hire models</li>
+                    </ul>
+                </div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Certifications &amp; Status</h3></div>
+                    <ul class="cap-list">
+                        <li>SBA-Certified SDVOSB</li>
+                        <li>Texas VetHUB Certified</li>
+                        <li>CMBL Registered (TX Comptroller)</li>
+                        <li>TVC Texas Veteran Commission</li>
+                        <li>SAM.gov Active Registration</li>
+                        <li>Active Secret Clearance (through 2030)</li>
+                        <li>CompTIA Security+, AWS CCP, ServiceNow</li>
+                    </ul>
+                </div>
+                <div class="cap-qr">
+                    <img src="/wp-content/uploads/imperio-qr-medallion.png" alt="QR Code" onerror="this.style.display='none'">
+                </div>
+            </div>
+            <!-- Column 2 -->
+            <div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Core Supply Capabilities</h3></div>
+                    <ul class="cap-list">
+                        <li>General product procurement, sourcing, and delivery coordination</li>
+                        <li>IT equipment: laptops, monitors, peripherals, networking (TAA compliant)</li>
+                        <li>Administrative and office supplies, consumables, small equipment</li>
+                        <li>Medical supplies, PPE, gloves, gowns, safety equipment</li>
+                        <li>HVAC parts, equipment, maintenance supplies</li>
+                        <li>Facilities and maintenance supplies, safety gear, janitorial</li>
+                        <li>Operational mission support materials, packaging, kitting</li>
+                        <li>Vendor sourcing, quote support, purchase tracking</li>
+                        <li>Rapid fulfillment for recurring, low-dollar, high-frequency buys</li>
+                        <li>Drop-ship coordination direct to government facilities</li>
+                    </ul>
+                </div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Supply Chain Approach</h3></div>
+                    <ul class="cap-list">
+                        <li>TAA-compliant product sourcing for federal contracts</li>
+                        <li>Authorized wholesale distributor relationships (TAA-compliant sources)</li>
+                        <li>Net-30 supplier terms with PO-backed fulfillment</li>
+                        <li>Drop-ship capable — faster delivery, no overhead</li>
+                        <li>Quote-to-delivery in 1–5 business days</li>
+                        <li>Wholesale pricing passed directly to buyer</li>
+                        <li>Micro-purchase friendly ($0–$10K, GPC accepted)</li>
+                    </ul>
+                </div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Product Categories</h3></div>
+                    <ul class="cap-list">
+                        <li>IT Equipment &amp; Peripherals (TAA Compliant)</li>
+                        <li>Office Supplies &amp; Administrative Materials</li>
+                        <li>Medical Supplies &amp; PPE</li>
+                        <li>HVAC Parts &amp; Equipment</li>
+                        <li>Janitorial &amp; Facilities Maintenance</li>
+                        <li>Safety &amp; Operational Gear</li>
+                        <li>MRO (Maintenance, Repair &amp; Operations)</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Column 3 -->
+            <div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Differentiators</h3></div>
+                    <ul class="cap-list">
+                        <li>SDVOSB with mission-first execution and compliance-driven approach</li>
+                        <li>21-year senior logistics leader, S4 and Supply NCOIC background</li>
+                        <li>Managed accountability across $1.5B+ in equipment and supplies</li>
+                        <li>Hazmat 61 and ammunition handling certification experience</li>
+                        <li>Active Secret clearance — classified environment ready</li>
+                        <li>Clean communication, documentation, predictable follow-through</li>
+                        <li>Dual capability: staffing AND supply under one vehicle</li>
+                    </ul>
+                </div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Past Performance</h3></div>
+                    <ul class="cap-list">
+                        <li>13+ years coordinating movement, storage, and replenishment of operational supplies</li>
+                        <li>Led recurring procurement cycles, inventory controls, and audit readiness</li>
+                        <li>Supported sustained operations with disciplined logistics and rapid response</li>
+                        <li>Govt operational supply leadership translated into vendor-ready execution</li>
+                    </ul>
+                </div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Execution &amp; Quality</h3></div>
+                    <ul class="cap-list">
+                        <li>Quote capture, vendor comparison, buyer-ready option sets</li>
+                        <li>Order tracking, delivery confirmation, issue resolution</li>
+                        <li>Standardized documentation, status updates, receipt support</li>
+                        <li>Controlled scope, no overpromising, reliable cadence</li>
+                        <li>Single POC accountability — Founder-led execution</li>
+                    </ul>
+                </div>
+                <div class="cap-section">
+                    <div class="cap-section-header"><h3>Target Clients</h3></div>
+                    <ul class="cap-list">
+                        <li>Department of Veterans Affairs (VA)</li>
+                        <li>Department of Defense (DoD) installations</li>
+                        <li>Federal civilian agencies</li>
+                        <li>Texas state agencies (CMBL/VetHUB)</li>
+                        <li>Prime contractors needing SDVOSB sub</li>
+                        <li>Defense contractors (cleared staffing)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         CONTRACT VEHICLES PAGE
+         ============================================================ -->
+    <div class="page-section" id="page-contract-vehicles">
+        <div class="cv-header">
+            <h1>CONTRACT VEHICLES</h1>
+            <p>Multiple pathways for government agencies, primes, and education buyers to procure staffing and supply services from Imperio.</p>
+        </div>
+
+        <div class="cv-content">
+
+            <!-- FEDERAL -->
+            <div class="cv-category">
+                <h2 class="cv-category-title">Federal</h2>
+                <div class="cv-category-sub">Available to all federal agencies and approved contractors</div>
+                <div class="cv-grid">
+                    <div class="cv-card">
+                        <span class="cv-status active">Active</span>
+                        <h4>SDVOSB Sole Source</h4>
+                        <p>Direct award to Imperio without competition. Available to any federal contracting officer for contracts up to $5M.</p>
+                        <div class="cv-detail"><strong>Authority:</strong> FAR 19.1405 &nbsp;|&nbsp; <strong>Ceiling:</strong> $5M</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status active">Active</span>
+                        <h4>SDVOSB Set-Aside</h4>
+                        <p>Competitive procurement restricted to SDVOSB vendors. Imperio competes against a smaller, qualified pool.</p>
+                        <div class="cv-detail"><strong>Authority:</strong> FAR 19.1405 &nbsp;|&nbsp; <strong>Type:</strong> Competitive</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status active">Active</span>
+                        <h4>Micro-Purchase (Open Market)</h4>
+                        <p>Direct purchase with a Government Purchase Card (GPC). No competition required. Fast, simple transactions.</p>
+                        <div class="cv-detail"><strong>Threshold:</strong> Up to $10,000 &nbsp;|&nbsp; <strong>Payment:</strong> GPC Card</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status active">Active</span>
+                        <h4>SAM.gov Open Market</h4>
+                        <p>Registered and searchable on SAM.gov for direct award and competitive opportunities across all federal agencies.</p>
+                        <div class="cv-detail"><strong>UEI:</strong> YCTTJHXH69A6 &nbsp;|&nbsp; <strong>CAGE:</strong> 152U4</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status active">Active</span>
+                        <h4>VA Veterans First</h4>
+                        <p>The VA gives SDVOSBs first priority under the Veterans First Contracting Program. Sole source up to $5M.</p>
+                        <div class="cv-detail"><strong>Authority:</strong> 38 U.S.C. § 8127 &nbsp;|&nbsp; <strong>Priority:</strong> Tier 1</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status coming">Coming Soon</span>
+                        <h4>GSA Schedule (MAS)</h4>
+                        <p>Federal supply schedule providing pre-negotiated pricing and streamlined ordering for all federal agencies.</p>
+                        <div class="cv-detail"><strong>Status:</strong> Application in process</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATE OF TEXAS -->
+            <div class="cv-category">
+                <h2 class="cv-category-title">State of Texas</h2>
+                <div class="cv-category-sub">Available to Texas state agencies, municipalities, and authorized purchasers</div>
+                <div class="cv-grid">
+                    <div class="cv-card">
+                        <span class="cv-status active">Active</span>
+                        <h4>CMBL Registered Vendor</h4>
+                        <p>Listed on the Texas Centralized Master Bidders List through the Comptroller of Public Accounts. Searchable by all state buyers.</p>
+                        <div class="cv-detail"><strong>Vendor #:</strong> 13930515203 &nbsp;|&nbsp; <strong>Expires:</strong> Feb 2027</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status active">Active</span>
+                        <h4>VetHUB Certified</h4>
+                        <p>Texas Veterans Heroes United in Business certification. Veteran set-aside preference for state purchasing.</p>
+                        <div class="cv-detail"><strong>Program:</strong> TX Comptroller HUB Program</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status active">Active</span>
+                        <h4>ESBD / Texas SmartBuy</h4>
+                        <p>Receives automatic bid notifications through the Electronic State Business Daily for matching solicitations.</p>
+                        <div class="cv-detail"><strong>Portal:</strong> txsmartbuy.com/esbd</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status coming">Coming Soon</span>
+                        <h4>DIR Contract (IT)</h4>
+                        <p>Texas Department of Information Resources contract for IT equipment and services to state agencies and school districts.</p>
+                        <div class="cv-detail"><strong>Status:</strong> Registration planned</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDUCATION & COOPERATIVE -->
+            <div class="cv-category">
+                <h2 class="cv-category-title">Education &amp; Cooperative Purchasing</h2>
+                <div class="cv-category-sub">Available to school districts, universities, counties, and cooperative members</div>
+                <div class="cv-grid">
+                    <div class="cv-card">
+                        <span class="cv-status coming">Coming Soon</span>
+                        <h4>BuyBoard</h4>
+                        <p>Texas cooperative purchasing program used by school districts, cities, and counties. Members purchase directly without separate RFPs.</p>
+                        <div class="cv-detail"><strong>Members:</strong> 7,000+ entities &nbsp;|&nbsp; <strong>Site:</strong> buyboard.com</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status coming">Coming Soon</span>
+                        <h4>TIPS / TAPS</h4>
+                        <p>The Interlocal Purchasing System — national cooperative used heavily by Texas school districts and local governments.</p>
+                        <div class="cv-detail"><strong>Members:</strong> Nationwide &nbsp;|&nbsp; <strong>Site:</strong> tips-usa.com</div>
+                    </div>
+                    <div class="cv-card">
+                        <span class="cv-status coming">Coming Soon</span>
+                        <h4>Sourcewell / OMNIA Partners</h4>
+                        <p>National cooperative purchasing organizations serving education, government, and nonprofit buyers across all 50 states.</p>
+                        <div class="cv-detail"><strong>Scope:</strong> National &nbsp;|&nbsp; <strong>Type:</strong> Cooperative</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRIME CONTRACTOR -->
+            <div class="cv-category">
+                <h2 class="cv-category-title">Prime Contractor Teaming</h2>
+                <div class="cv-category-sub">SDVOSB subcontracting credit for prime contractors</div>
+                <div class="cv-grid">
+                    <div class="cv-card">
+                        <span class="cv-status active">Active</span>
+                        <h4>SDVOSB Subcontractor</h4>
+                        <p>Primes receive SDVOSB subcontracting credit by teaming with Imperio on staffing and/or supply requirements. Helps meet the federal 5% SDVOSB goal.</p>
+                        <div class="cv-detail"><strong>Federal Goal:</strong> 5% of all contracting dollars &nbsp;|&nbsp; <strong>Capability:</strong> Staffing + Supply</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cv-cta">
+                <h3>Ready to Partner?</h3>
+                <p>Whether you're a contracting officer, prime contractor, or purchasing agent — Imperio is ready to deliver.</p>
+                <a class="cta-btn cta-primary" href="#" onclick="showPage('contact'); return false;">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         CONTACT PAGE
+         ============================================================ -->
+    <div class="page-section" id="page-contact">
+        <div style="height:40px;background:var(--bg-dark);"></div>
+        <div class="section-dark">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>GET IN TOUCH</h2>
+                    <div class="gold-divider"></div>
+                    <div class="contact-item">
+                        <div class="label">Founder &amp; CEO</div>
+                        <div class="value">Anthony K. Kelley Sr.</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Email</div>
+                        <div class="value"><a href="mailto:anthony@imperiovita.co">anthony@imperiovita.co</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Phone</div>
+                        <div class="value"><a href="tel:+12542265216">(254) 226-5216</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Website</div>
+                        <div class="value"><a href="https://www.imperiovita.co" target="_blank">www.imperiovita.co</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Location</div>
+                        <div class="value">Killeen, Texas (Near Fort Cavazos)</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Service Area</div>
+                        <div class="value">Nationwide</div>
+                    </div>
+                    <div style="margin-top:30px;padding:20px;border:1px solid var(--border-gold);background:var(--bg-card);">
+                        <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;">QUICK REFERENCE</div>
+                        <div style="font-family:'Raleway',sans-serif;font-size:12px;color:var(--light-gray);line-height:2;">
+                            UEI: YCTTJHXH69A6<br>
+                            CAGE: 152U4<br>
+                            SDVOSB &bull; VetHUB &bull; CMBL &bull; TVC<br>
+                            Secret Clearance (Active through 2030)
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Organization">
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="How can we help?"></textarea>
+                    <button class="cta-btn cta-primary" style="width:100%;text-align:center;">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <h3>Imperio Talent Solutions</h3>
+                <p>A Division of The House of Kel LLC</p>
+                <div class="footer-contact" style="margin-top:8px;">
+                    <a href="tel:+12542265216">(254) 226-5216</a> &nbsp;|&nbsp;
+                    <a href="mailto:anthony@imperiovita.co">anthony@imperiovita.co</a> &nbsp;|&nbsp;
+                    <a href="https://www.imperiovita.co">www.imperiovita.co</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-certs">SDVOSB &bull; VetHUB &bull; CMBL &bull; TVC &bull; SAM.gov</div>
+                <div class="footer-copy">&copy; 2026 The House of Kel LLC. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ JAVASCRIPT ============ -->
+    <script>
+        // Hamburger toggle
+        function toggleMenu() {
+            document.getElementById('hamburger').classList.toggle('open');
+            document.getElementById('navOverlay').classList.toggle('open');
+            document.body.style.overflow = document.getElementById('navOverlay').classList.contains('open') ? 'hidden' : '';
+        }
+
+        // Page navigation
+        function showPage(page) {
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+            const target = document.getElementById('page-' + page);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Scrolled top bar effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('topBar').classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Close menu on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.getElementById('navOverlay').classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html>
