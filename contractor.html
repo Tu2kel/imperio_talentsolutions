@@ -1,674 +1,1036 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imperio Talent Solutions | SDVOSB Staffing & Supply</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style/contractor.css">
-    
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="./style/contractor.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ════════════════════════════════════════
+     SIDEBAR
+════════════════════════════════════════ -->
+    <aside class="sidebar">
+      <div class="sidebar-brand" onclick="window.location = 'index.html'">
+        <span class="sidebar-wordmark">IMPERIO</span>
+        <span class="sidebar-sub">Talent Solutions</span>
+      </div>
 
-    <!-- ============ TOP BAR ============ -->
-    <nav class="top-bar" id="topBar">
-        <div class="top-bar-left" onclick="showPage('home')">
-            <!-- Replace with hosted logo -->
-            <span class="top-bar-wordmark">IMPERIO</span>
+      <nav class="sidebar-nav">
+        <span class="nav-label">Overview</span>
+        <a class="nav-link active" href="#home"><i class="ico">⌂</i> Home</a>
+        <a class="nav-link" href="#who-we-are"
+          ><i class="ico">◈</i> Who We Are</a
+        >
+
+        <div class="nav-divider"></div>
+        <span class="nav-label">Services</span>
+        <a class="nav-link" href="#staffing"><i class="ico">◆</i> Staffing</a>
+        <a class="nav-link" href="#procurement"
+          ><i class="ico">◇</i> Procurement</a
+        >
+
+        <div class="nav-divider"></div>
+        <span class="nav-label">Federal</span>
+        <a class="nav-link" href="#capability-statement"
+          ><i class="ico">▣</i> Capability Statement</a
+        >
+        <a class="nav-link" href="#contract-vehicles"
+          ><i class="ico">▤</i> Contract Vehicles</a
+        >
+
+        <div class="nav-divider"></div>
+        <span class="nav-label">Connect</span>
+        <a class="nav-link" href="#contact"><i class="ico">✉</i> Contact</a>
+
+        <div class="nav-divider"></div>
+        <a class="nav-link ext" href="https://thehouseofkel.com" target="_blank"
+          ><i class="ico">↗</i> The House of Kel</a
+        >
+        <a class="nav-link ext" href="employers.html"
+          ><i class="ico">→</i> Employers</a
+        >
+        <a class="nav-link ext" href="job-seekers.html"
+          ><i class="ico">→</i> Job Seekers</a
+        >
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="cert-row">
+          <span class="cert">SDVOSB</span>
+          <span class="cert">VetHUB</span>
+          <span class="cert">CMBL</span>
+          <span class="cert">SAM</span>
+          <span class="cert">TVC</span>
         </div>
-        <div class="top-bar-center">
-    <!-- External pages -->
-    <a class="audience-btn" href="employers.html">Employers</a>
-    <a class="audience-btn" href="job-seekers.html">Job Seekers</a>
+        <small>UEI: YCTTJHXH69A6 &nbsp;·&nbsp; CAGE: 152U4</small>
+      </div>
+    </aside>
 
-    <!-- Internal contractor section -->
-    <a class="audience-btn" href="#" onclick="showPage('staffing'); return false;">Staffing</a>
-
-    <!-- Optional Government section -->
-    <a class="audience-btn gov-btn" href="#" onclick="showPage('contract-vehicles'); return false;">Government Buyers</a>
-
-    <!-- Back to Imperio Main Site -->
-    <a class="audience-btn" href="index.html">← Imperio Home</a>
-</div>
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
-
-    <!-- ============ NAV OVERLAY ============ -->
-    <div class="nav-overlay" id="navOverlay">
-        <div class="nav-overlay-left">
-            <!-- Replace with hero image of your choice -->
-            <div style="width:100%;max-width:400px;height:60vh;background:linear-gradient(135deg,var(--deep-red),var(--darker-red));display:flex;align-items:center;justify-content:center;">
-                <span style="font-family:'Cinzel',serif;font-size:48px;color:var(--gold);letter-spacing:6px;writing-mode:vertical-rl;text-orientation:mixed;">IMPERIO</span>
-            </div>
-        </div>
-        <div class="nav-overlay-right">
-            <ul class="nav-links">
-                <li><a class="thok" href="https://thehouseofkel.com" >The House of Kel</a></li>
-                <li><a href="#" onclick="showPage('home'); toggleMenu(); return false;">Home</a></li>
-                <li><a href="#" onclick="showPage('who-we-are'); toggleMenu(); return false;">Who We Are</a></li>
-                <li><a href="#" onclick="showPage('staffing'); toggleMenu(); return false;">Staffing</a></li>
-                <li><a href="#" onclick="showPage('procurement'); toggleMenu(); return false;">Procurement</a></li>
-                <li><a href="#" onclick="showPage('capability-statement'); toggleMenu(); return false;">Capability Statement</a></li>
-                <li><a href="#" onclick="showPage('contract-vehicles'); toggleMenu(); return false;">Contract Vehicles</a></li>
-                <li><a href="#" onclick="showPage('contact'); toggleMenu(); return false;">Contact</a></li>
-            </ul>
-            <div class="nav-social">
-                <a href="https://www.linkedin.com/in/anthony-k-kelley-sr/">LinkedIn</a>
-                <a href="#">Instagram</a>
-            </div>
-        </div>
+    <!-- ════════════════════════════════════════
+     MOBILE BAR
+════════════════════════════════════════ -->
+    <div class="mobile-bar">
+      <span class="mobile-wordmark">IMPERIO</span>
+      <div class="hamburger" id="hbg" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
     </div>
 
-    <!-- ============================================================
-         HOME PAGE
-         ============================================================ -->
-    <div class="page-section active" id="page-home">
-        <section class="hero-section">
-            <div class="hero-content">
-                <div class="hero-badge">Service-Disabled Veteran-Owned Small Business</div>
-                <h1 class="hero-h1">TALENT &amp; <span>SUPPLY</span><br>DELIVERED</h1>
-                <p class="hero-sub">Cleared workforce solutions and government product fulfillment — built on 21 years of military logistics leadership.</p>
-                <div class="hero-cta-group">
-                    <a class="cta-btn cta-primary" href="#" onclick="showPage('capability-statement'); return false;">View Capabilities</a>
-                    <a class="cta-btn cta-secondary" href="#" onclick="showPage('contact'); return false;">Contact Us</a>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <span>Scroll</span>
-                <div class="arrow"></div>
-            </div>
-        </section>
+    <div class="mobile-menu" id="mobileMenu">
+      <a class="nav-link" href="#home" onclick="closeMenu()"
+        ><i class="ico">⌂</i> Home</a
+      >
+      <a class="nav-link" href="#who-we-are" onclick="closeMenu()"
+        ><i class="ico">◈</i> Who We Are</a
+      >
+      <div class="nav-divider"></div>
+      <a class="nav-link" href="#staffing" onclick="closeMenu()"
+        ><i class="ico">◆</i> Staffing</a
+      >
+      <a class="nav-link" href="#procurement" onclick="closeMenu()"
+        ><i class="ico">◇</i> Procurement</a
+      >
+      <div class="nav-divider"></div>
+      <a class="nav-link" href="#capability-statement" onclick="closeMenu()"
+        ><i class="ico">▣</i> Capability Statement</a
+      >
+      <a class="nav-link" href="#contract-vehicles" onclick="closeMenu()"
+        ><i class="ico">▤</i> Contract Vehicles</a
+      >
+      <div class="nav-divider"></div>
+      <a class="nav-link" href="#contact" onclick="closeMenu()"
+        ><i class="ico">✉</i> Contact</a
+      >
+      <div class="nav-divider"></div>
+      <a class="nav-link ext" href="https://thehouseofkel.com" target="_blank"
+        ><i class="ico">↗</i> The House of Kel</a
+      >
+      <a class="nav-link ext" href="employers.html" onclick="closeMenu()"
+        ><i class="ico">→</i> Employers</a
+      >
+      <a class="nav-link ext" href="job-seekers.html" onclick="closeMenu()"
+        ><i class="ico">→</i> Job Seekers</a
+      >
+    </div>
+
+    <!-- ════════════════════════════════════════
+     MAIN
+════════════════════════════════════════ -->
+    <main class="main">
+      <!-- ── HOME ── -->
+      <section class="section" id="home">
+        <div class="hero-inner">
+          <div class="hero-badge">
+            Service-Disabled Veteran-Owned Small Business
+          </div>
+          <h1 class="hero-h1">
+            TALENT &amp; <span>SUPPLY</span><br />DELIVERED
+          </h1>
+          <p class="hero-sub">
+            Cleared workforce solutions and government product fulfillment built
+            on 21 years of military logistics leadership.
+          </p>
+          <div class="hero-cta-group">
+            <a class="cta-btn cta-primary" href="#capability-statement"
+              >View Capabilities</a
+            >
+            <a class="cta-btn cta-secondary" href="#contact">Contact Us</a>
+          </div>
+        </div>
 
         <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-number">21</div>
-                <div class="stat-label">Years Military Service</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">$1.5B+</div>
-                <div class="stat-label">Managed Accountability</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">4</div>
-                <div class="stat-label">Service Verticals</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">E-7</div>
-                <div class="stat-label">Retired Senior NCO</div>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">21</div>
+            <div class="stat-label">Years Military Service</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">$1.5B+</div>
+            <div class="stat-label">Managed Accountability</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Service Verticals</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">E-7</div>
+            <div class="stat-label">Retired Senior NCO</div>
+          </div>
         </div>
 
-        <div class="section-dark">
-            <div class="section-block">
-                <h2 class="section-title">What We Do</h2>
-                <div class="gold-divider"></div>
-                <p class="section-text">Imperio Talent Solutions is a dual-capability SDVOSB providing recruiter-only talent sourcing and wholesale product fulfillment for government agencies, prime contractors, and defense organizations. We place cleared professionals and deliver TAA-compliant supplies — under one contract vehicle.</p>
-
-                <div class="verticals-grid">
-                    <div class="vertical-card">
-                        <h3>IT &amp; Cybersecurity</h3>
-                        <p>Cleared IT professionals and TAA-compliant hardware. From TS/SCI talent to laptops and networking equipment.</p>
-                    </div>
-                    <div class="vertical-card">
-                        <h3>Medical &amp; Healthcare</h3>
-                        <p>Healthcare staffing and medical supply fulfillment. PPE, surgical supplies, and clinical professionals.</p>
-                    </div>
-                    <div class="vertical-card">
-                        <h3>HVAC &amp; Trades</h3>
-                        <p>HVAC technicians, maintenance professionals, and parts/equipment procurement for government facilities.</p>
-                    </div>
-                    <div class="vertical-card">
-                        <h3>Logistics &amp; Supply Chain</h3>
-                        <p>Workforce solutions and office/operational supplies. The backbone that keeps missions running.</p>
-                    </div>
-                </div>
+        <div class="home-body">
+          <div class="s-eyebrow">What We Do</div>
+          <div class="gold-divider"></div>
+          <p class="s-lead">
+            Imperio Talent Solutions is a dual-capability SDVOSB providing
+            recruiter-only talent sourcing and wholesale product fulfillment for
+            government agencies, prime contractors, and defense organizations.
+            We place cleared professionals and deliver TAA-compliant supplies
+            under one contract vehicle.
+          </p>
+          <div class="verticals-grid">
+            <div class="vertical-card">
+              <h3>IT &amp; Cybersecurity</h3>
+              <p>
+                Cleared IT professionals and TAA-compliant hardware. From TS/SCI
+                talent to laptops and networking equipment.
+              </p>
             </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-         WHO WE ARE PAGE
-         ============================================================ -->
-    <div class="page-section" id="page-who-we-are">
-        <div style="height:40px;background:var(--bg-dark);"></div>
-        <div class="section-dark">
-            <div class="founder-section">
-                <div>
-                    <!-- Replace with hosted headshot -->
-                    <div style="background:linear-gradient(135deg,var(--deep-red),var(--bg-card));display:flex;align-items:center;justify-content:center;border:1px solid var(--border-gold);">
-                        <span style="font-family:'Cinzel',serif;color:var(--gold);font-size:14px;letter-spacing:2px;"><img src="./images/testerImg.png" alt="Awesome Pic" class="headshot" ></span>
-                    </div>
-                </div>
-                <div class="founder-info">
-                    <h2>Anthony K. Kelley Sr.</h2>
-                    <div class="founder-title">Founder &amp; CEO &nbsp;|&nbsp; 21-Year Army/Navy Veteran (E-7 Retired)</div>
-                    <div class="gold-divider"></div>
-                    <p>Imperio Talent Solutions was founded on a simple premise: the same discipline, accountability, and mission-first execution that drives military operations should drive how businesses source talent and fulfill supply requirements.</p>
-                    <p>With 21 years of combined Army and Navy service as an S4 Supply NCOIC, Anthony managed over $1.5 billion in equipment and supply accountability, led 70+ personnel, and coordinated procurement operations across multiple theaters. From ammunition handling to large-scale inventory management, his career was built on making sure the right resources reached the right people — on time, every time.</p>
-                    <p>That operational DNA is now the foundation of Imperio. Whether placing a cleared cybersecurity analyst at a DoD installation or fulfilling a $10K office supply order for a VA medical center, the approach is the same: clean communication, predictable follow-through, and zero overpromising.</p>
-                    <p>Imperio operates as a division of The House of Kel LLC, headquartered in Killeen, Texas, near Fort Cavazos — one of the largest military installations in the world.</p>
-
-                    <div style="margin-top:30px;padding:20px;border:1px solid var(--border-gold);background:var(--bg-card);">
-                        <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:10px;">CREDENTIALS</div>
-                        <div style="font-family:'Raleway',sans-serif;font-size:13px;color:var(--light-gray);line-height:1.8;">
-                            CompTIA Security+ &bull; AWS Cloud Practitioner &bull; ServiceNow Certified<br>
-                            Active Secret Clearance (through 2030)<br>
-                            Hazmat 61 &bull; Ammunition Handling Certified<br>
-                            SBA-Certified SDVOSB &bull; Texas VetHUB &bull; CMBL Registered
-                        </div>
-                    </div>
-                </div>
+            <div class="vertical-card">
+              <h3>Medical &amp; Healthcare</h3>
+              <p>
+                Healthcare staffing and medical supply fulfillment. PPE,
+                surgical supplies, and clinical professionals.
+              </p>
             </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-         STAFFING PAGE
-         ============================================================ -->
-    <div class="page-section" id="page-staffing">
-        <div style="height:40px;background:var(--bg-dark);"></div>
-        <div class="section-dark">
-            <div class="section-block">
-                <h2 class="section-title">Staffing Solutions</h2>
-                <div class="section-subtitle">Recruiter-only talent sourcing across four critical verticals</div>
-                <div class="gold-divider"></div>
-                <p class="section-text" style="margin-bottom:40px;">Imperio delivers pre-vetted, qualified candidates through a recruiter-only model — no temp agencies, no body shops. We source, screen, and present professionals who are ready to contribute from day one. Our specialization in cleared and credentialed talent means faster placements with less risk.</p>
-
-                <div class="verticals-grid">
-                    <div class="vertical-card">
-                        <h3>IT &amp; Cybersecurity</h3>
-                        <p>Network engineers, cybersecurity analysts, systems administrators, help desk professionals, cloud architects. Secret, TS, and TS/SCI cleared candidates available.</p>
-                    </div>
-                    <div class="vertical-card">
-                        <h3>HVAC &amp; Trades</h3>
-                        <p>HVAC technicians, maintenance specialists, facilities engineers, and skilled trades professionals for government installations and commercial facilities.</p>
-                    </div>
-                    <div class="vertical-card">
-                        <h3>Medical &amp; Healthcare</h3>
-                        <p>Nurses, medical technicians, clinical support staff, and healthcare administrators. VA, DoD, and civilian healthcare facility placements.</p>
-                    </div>
-                    <div class="vertical-card">
-                        <h3>Logistics &amp; Supply Chain</h3>
-                        <p>Warehouse managers, logistics coordinators, procurement specialists, inventory control analysts, and transportation professionals.</p>
-                    </div>
-                </div>
-
-                <div style="margin-top:50px;padding:30px;border:1px solid var(--border-gold);background:var(--bg-card);">
-                    <h3 style="font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:2px;margin-bottom:15px;">PLACEMENT MODELS</h3>
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
-                        <div>
-                            <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--white);margin-bottom:6px;">DIRECT HIRE</div>
-                            <div style="font-family:'Raleway',sans-serif;font-size:12px;color:var(--light-gray);">Full-time permanent placements. One-time placement fee. Candidate is your employee from day one.</div>
-                        </div>
-                        <div>
-                            <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--white);margin-bottom:6px;">CONTRACT-TO-HIRE</div>
-                            <div style="font-family:'Raleway',sans-serif;font-size:12px;color:var(--light-gray);">Trial period on contract before converting to full-time. Reduces hiring risk.</div>
-                        </div>
-                        <div>
-                            <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--white);margin-bottom:6px;">CONTRACT STAFFING</div>
-                            <div style="font-family:'Raleway',sans-serif;font-size:12px;color:var(--light-gray);">Project-based or term-limited assignments. Flexible workforce scaling.</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="vertical-card">
+              <h3>HVAC &amp; Trades</h3>
+              <p>
+                HVAC technicians, maintenance professionals, and parts/equipment
+                procurement for government facilities.
+              </p>
             </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-         PROCUREMENT PAGE
-         ============================================================ -->
-    <div class="page-section" id="page-procurement">
-        <div style="height:40px;background:var(--bg-dark);"></div>
-        <div class="section-dark">
-            <div class="section-block">
-                <h2 class="section-title">Procurement &amp; Supply</h2>
-                <div class="section-subtitle">TAA-compliant product fulfillment for government and prime contractor buyers</div>
-                <div class="gold-divider"></div>
-                <p class="section-text" style="margin-bottom:40px;">Imperio sources and delivers products through authorized wholesale distributors with established TAA-compliant product lines. All products meet federal Trade Agreements Act requirements. We offer drop-ship direct to your facility, quote-to-delivery in 1–5 business days, and accept GPC cards for micro-purchases under $10K.</p>
-
-                <div class="verticals-grid">
-                    <div class="vertical-card">
-                        <h3>IT Equipment</h3>
-                        <p>Laptops, desktops, monitors, peripherals, networking equipment, cables, and accessories. All TAA-compliant through authorized distributors.</p>
-                    </div>
-                    <div class="vertical-card">
-                        <h3>Office Supplies</h3>
-                        <p>Administrative materials, stationery, toner, paper, small equipment, breakroom supplies, and operational consumables.</p>
-                    </div>
-                    <div class="vertical-card">
-                        <h3>Medical &amp; PPE</h3>
-                        <p>Gloves, gowns, masks, surgical supplies, safety equipment, first aid, and infection control products.</p>
-                    </div>
-                    <div class="vertical-card">
-                        <h3>HVAC &amp; Facilities</h3>
-                        <p>HVAC parts, filters, maintenance supplies, janitorial products, safety gear, and MRO (Maintenance, Repair &amp; Operations) materials.</p>
-                    </div>
-                </div>
-
-                <div style="margin-top:50px;padding:30px;border:1px solid var(--border-gold);background:var(--bg-card);">
-                    <h3 style="font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:2px;margin-bottom:15px;">HOW WE DELIVER</h3>
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;">
-                        <div style="text-align:center;">
-                            <div style="font-family:'Cinzel',serif;font-size:28px;color:var(--gold);">1</div>
-                            <div style="font-family:'Raleway',sans-serif;font-size:11px;color:var(--white);margin-top:6px;">RECEIVE YOUR REQUIREMENT</div>
-                        </div>
-                        <div style="text-align:center;">
-                            <div style="font-family:'Cinzel',serif;font-size:28px;color:var(--gold);">2</div>
-                            <div style="font-family:'Raleway',sans-serif;font-size:11px;color:var(--white);margin-top:6px;">SOURCE &amp; QUOTE FROM DISTRIBUTORS</div>
-                        </div>
-                        <div style="text-align:center;">
-                            <div style="font-family:'Cinzel',serif;font-size:28px;color:var(--gold);">3</div>
-                            <div style="font-family:'Raleway',sans-serif;font-size:11px;color:var(--white);margin-top:6px;">DROP-SHIP TO YOUR FACILITY</div>
-                        </div>
-                        <div style="text-align:center;">
-                            <div style="font-family:'Cinzel',serif;font-size:28px;color:var(--gold);">4</div>
-                            <div style="font-family:'Raleway',sans-serif;font-size:11px;color:var(--white);margin-top:6px;">INVOICE &amp; CONFIRM DELIVERY</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="vertical-card">
+              <h3>Logistics &amp; Supply Chain</h3>
+              <p>
+                Workforce solutions and office/operational supplies. The
+                backbone that keeps missions running.
+              </p>
             </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- ============================================================
-         CAPABILITY STATEMENT PAGE
-         ============================================================ -->
-    <div class="page-section" id="page-capability-statement">
-        <div class="capstat-header">
-            <h1>CAPABILITY STATEMENT</h1>
-            <p>Staffing &amp; Supply Solutions &nbsp;|&nbsp; Federal &nbsp;|&nbsp; State &nbsp;|&nbsp; Prime Contractors</p>
+      <!-- ── WHO WE ARE ── -->
+      <section
+        class="section"
+        id="who-we-are"
+        style="background: var(--bg-section)"
+      >
+        <div class="inner">
+          <div class="s-eyebrow">Our Story</div>
+          <h2 class="s-title">Who We Are</h2>
+          <div class="gold-divider"></div>
+
+          <div class="founder-grid">
+            <div>
+              <!-- Photo: no box, no placeholder. Drop image at this path and it renders. -->
+              <img
+                src="./images/testerImg.png"
+                alt="Anthony K. Kelley Sr., Founder &amp; CEO"
+                class="founder-photo"
+                onerror="
+                  this.style.background = '#1a0303';
+                  this.removeAttribute('src');
+                "
+              />
+            </div>
+            <div class="founder-info">
+              <h2>Anthony K. Kelley Sr.</h2>
+              <p class="founder-title">
+                Founder &amp; CEO · Retired Army / Navy Veteran E-7 · S4 NCOIC
+              </p>
+              <p>
+                Anthony Kelley is a 21-year military veteran with deep
+                experience in large-scale logistics, supply chain management,
+                and workforce leadership. As a former S4 NCOIC he managed over
+                $1.5 billion in equipment and supplies, led 70+ personnel, and
+                executed procurement cycles under high-stakes operational
+                conditions.
+              </p>
+              <p>
+                He founded Imperio Talent Solutions as a Service-Disabled
+                Veteran-Owned Small Business to bring that same discipline,
+                accountability, and precision to government talent acquisition
+                and product fulfillment. Based in Killeen, Texas minutes from
+                Fort Cavazos Imperio is built to serve the military and federal
+                community from the inside out.
+              </p>
+              <div class="creds">
+                <span class="cred">SDVOSB</span>
+                <span class="cred">Secret Clearance</span>
+                <span class="cred">CompTIA Security+</span>
+                <span class="cred">AWS CCP</span>
+                <!-- <span class="cred">ServiceNow</span> -->
+                <span class="cred">VetHUB</span>
+                <span class="cred">TVC</span>
+                <span class="cred">SAM.gov Active</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="capstat-download-bar">
-            <a class="download-btn-small" href="/wp-content/uploads/Imperio_Capabilities_Statement.pdf" download>
-                <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z"/></svg>
-                Download PDF
-            </a>
+      </section>
+
+      <!-- ── STAFFING ── -->
+      <section class="section" id="staffing">
+        <div class="inner">
+          <div class="s-eyebrow">Services</div>
+          <h2 class="s-title">Staffing Solutions</h2>
+          <div class="gold-divider"></div>
+          <p class="s-lead">
+            Recruiter-only talent sourcing across four critical verticals.
+            Pre-vetted professionals ready to contribute from day one no temp
+            agencies, no body shops.
+          </p>
+
+          <div class="verticals-grid">
+            <div class="vertical-card">
+              <h3>IT &amp; Cybersecurity</h3>
+              <p>
+                Network engineers, cybersecurity analysts, systems
+                administrators, help desk, cloud architects. Secret, TS, and
+                TS/SCI cleared candidates available.
+              </p>
+            </div>
+            <div class="vertical-card">
+              <h3>HVAC &amp; Trades</h3>
+              <p>
+                HVAC technicians, maintenance specialists, facilities engineers,
+                and skilled trades professionals for government installations
+                and commercial facilities.
+              </p>
+            </div>
+            <div class="vertical-card">
+              <h3>Medical &amp; Healthcare</h3>
+              <p>
+                Nurses, medical technicians, clinical support staff, and
+                healthcare administrators. VA, DoD, and civilian healthcare
+                facility placements.
+              </p>
+            </div>
+            <div class="vertical-card">
+              <h3>Logistics &amp; Supply Chain</h3>
+              <p>
+                Warehouse managers, logistics coordinators, procurement
+                specialists, inventory control analysts, and transportation
+                professionals.
+              </p>
+            </div>
+          </div>
+
+          <div class="placement-grid">
+            <div class="placement-card">
+              <h4>Direct Hire</h4>
+              <p>
+                Full-time permanent placements. One-time placement fee.
+                Candidate is your employee from day one.
+              </p>
+            </div>
+            <div class="placement-card">
+              <h4>Contract-to-Hire</h4>
+              <p>
+                Trial period on contract before converting to full-time. Reduces
+                hiring risk while maintaining flexibility.
+              </p>
+            </div>
+            <div class="placement-card">
+              <h4>Contract Staffing</h4>
+              <p>
+                Project-based or term-limited assignments. Flexible workforce
+                scaling for surge requirements.
+              </p>
+            </div>
+          </div>
+
+          <div class="notice-box">
+            <h4>Payroll &amp; Factoring Contract Staffing Enabled</h4>
+            <p>
+              Imperio supports contract staffing engagements through PO-backed
+              fulfillment and payroll factoring. We can carry payroll on active
+              contract placements without requiring upfront capital from the
+              client enabling faster starts, cleaner invoicing, and scalable
+              staffing under government purchase orders. Net-30 terms available
+              for qualifying agencies and prime contractors.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PROCUREMENT ── -->
+      <section
+        class="section"
+        id="procurement"
+        style="background: var(--bg-section)"
+      >
+        <div class="inner">
+          <div class="s-eyebrow">Services</div>
+          <h2 class="s-title">Procurement &amp; Supply</h2>
+          <div class="gold-divider"></div>
+          <p class="s-lead">
+            TAA-compliant product fulfillment for government and prime
+            contractor buyers. Quote-to-delivery in 1–5 business days. GPC cards
+            accepted for micro-purchases under $10K.
+          </p>
+
+          <div class="verticals-grid">
+            <div class="vertical-card">
+              <h3>IT Equipment</h3>
+              <p>
+                Laptops, desktops, monitors, peripherals, networking equipment,
+                cables, and accessories. All TAA-compliant through authorized
+                distributors.
+              </p>
+            </div>
+            <div class="vertical-card">
+              <h3>Office Supplies</h3>
+              <p>
+                Administrative materials, stationery, toner, paper, small
+                equipment, breakroom supplies, and operational consumables.
+              </p>
+            </div>
+            <div class="vertical-card">
+              <h3>Medical &amp; PPE</h3>
+              <p>
+                Gloves, gowns, masks, surgical supplies, safety equipment, first
+                aid, and infection control products.
+              </p>
+            </div>
+            <div class="vertical-card">
+              <h3>HVAC &amp; Facilities</h3>
+              <p>
+                HVAC parts, filters, maintenance supplies, janitorial products,
+                safety gear, and MRO materials.
+              </p>
+            </div>
+          </div>
+
+          <div class="delivery-steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-label">Receive Your Requirement</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-label">Source &amp; Quote from Distributors</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-label">Drop-Ship to Your Facility</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-label">Invoice &amp; Confirm Delivery</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CAPABILITY STATEMENT ── -->
+      <section class="section" id="capability-statement">
+        <div class="capstat-band">
+          <h1>CAPABILITY STATEMENT</h1>
+          <p>
+            Staffing &amp; Supply Solutions &nbsp;|&nbsp; Federal &nbsp;|&nbsp;
+            State &nbsp;|&nbsp; Prime Contractors
+          </p>
         </div>
 
-        <div style="max-width:1100px;margin:0 auto;padding:0 40px 10px;">
-            <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--light-gray);line-height:1.7;">Service-disabled veteran-owned staffing and supply firm. Recruiter-only talent sourcing, cleared professional placement, and wholesale product fulfillment (IT equipment, medical/PPE, HVAC, office supplies) for government and prime contractor buyers.</p>
+        <div class="download-bar">
+          <a
+            class="dl-btn"
+            href="/wp-content/uploads/Imperio_Capabilities_Statement.pdf"
+            download
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z" />
+            </svg>
+            Download PDF
+          </a>
         </div>
 
         <div class="capstat-grid">
-            <!-- Column 1 -->
-            <div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Company Snapshot</h3></div>
-                    <div class="cap-info-row"><span class="cap-info-label">Legal:</span><span class="cap-info-value">The House of Kel LLC</span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">DBA:</span><span class="cap-info-value">Imperio Talent Solutions</span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">Founder:</span><span class="cap-info-value">Anthony K. Kelley Sr.</span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">Email:</span><span class="cap-info-value"><a href="mailto:anthony@imperiovita.co">anthony@imperiovita.co</a></span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">Phone:</span><span class="cap-info-value"><a href="tel:+12542265216">(254) 226-5216</a></span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">Web:</span><span class="cap-info-value"><a href="https://www.imperiovita.co">www.imperiovita.co</a></span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">UEI:</span><span class="cap-info-value">YCTTJHXH69A6</span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">CAGE:</span><span class="cap-info-value">152U4</span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">NAICS:</span><span class="cap-info-value codes">561311, 561320, 561110, 541519, 423430, 423450, 423720, 424120</span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">PSC:</span><span class="cap-info-value codes">R499, R430, B599, 6515, 4120, 7520, 7530</span></div>
-                    <div class="cap-info-row"><span class="cap-info-label">Service:</span><span class="cap-info-value">Nationwide</span></div>
-                </div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Staffing Capabilities</h3></div>
-                    <ul class="cap-list">
-                        <li>Cleared professional placement (Secret/TS/SCI)</li>
-                        <li>IT &amp; cybersecurity talent sourcing</li>
-                        <li>HVAC technician and trades staffing</li>
-                        <li>Healthcare and medical professional placement</li>
-                        <li>Logistics &amp; supply chain workforce solutions</li>
-                        <li>Veteran transition employment support</li>
-                        <li>Candidate screening, vetting, and compliance</li>
-                        <li>Direct-hire and contract-to-hire models</li>
-                    </ul>
-                </div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Certifications &amp; Status</h3></div>
-                    <ul class="cap-list">
-                        <li>SBA-Certified SDVOSB</li>
-                        <li>Texas VetHUB Certified</li>
-                        <li>CMBL Registered (TX Comptroller)</li>
-                        <li>TVC Texas Veteran Commission</li>
-                        <li>SAM.gov Active Registration</li>
-                        <li>Active Secret Clearance (through 2030)</li>
-                        <li>CompTIA Security+, AWS CCP, ServiceNow</li>
-                    </ul>
-                </div>
-                <div class="cap-qr">
-                    <img src="/wp-content/uploads/imperio-qr-medallion.png" alt="QR Code" onerror="this.style.display='none'">
-                </div>
+          <!-- Col 1 -->
+          <div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Company Snapshot</h3></div>
+              <div class="cap-row">
+                <span class="cap-lbl">Legal</span
+                ><span class="cap-val">The House of Kel LLC</span>
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">DBA</span
+                ><span class="cap-val">Imperio Talent Solutions</span>
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">Founder</span
+                ><span class="cap-val">Anthony K. Kelley Sr.</span>
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">Email</span
+                ><span class="cap-val"
+                  ><a href="mailto:anthony@imperiovita.co"
+                    >anthony@imperiovita.co</a
+                  ></span
+                >
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">Phone</span
+                ><span class="cap-val"
+                  ><a href="tel:+12542265216">(254) 226-5216</a></span
+                >
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">Web</span
+                ><span class="cap-val"
+                  ><a href="https://www.imperiovita.co" target="_blank"
+                    >www.imperiovita.co</a
+                  ></span
+                >
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">UEI</span
+                ><span class="cap-val">YCTTJHXH69A6</span>
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">CAGE</span
+                ><span class="cap-val">152U4</span>
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">NAICS</span
+                ><span class="cap-val codes"
+                  >561311, 561320, 561110, 541519, 423430, 423450, 423720,
+                  424120</span
+                >
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">PSC</span
+                ><span class="cap-val codes"
+                  >R499, R430, B599, 6515, 4120, 7520, 7530</span
+                >
+              </div>
+              <div class="cap-row">
+                <span class="cap-lbl">Service</span
+                ><span class="cap-val">Nationwide</span>
+              </div>
             </div>
-            <!-- Column 2 -->
-            <div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Core Supply Capabilities</h3></div>
-                    <ul class="cap-list">
-                        <li>General product procurement, sourcing, and delivery coordination</li>
-                        <li>IT equipment: laptops, monitors, peripherals, networking (TAA compliant)</li>
-                        <li>Administrative and office supplies, consumables, small equipment</li>
-                        <li>Medical supplies, PPE, gloves, gowns, safety equipment</li>
-                        <li>HVAC parts, equipment, maintenance supplies</li>
-                        <li>Facilities and maintenance supplies, safety gear, janitorial</li>
-                        <li>Operational mission support materials, packaging, kitting</li>
-                        <li>Vendor sourcing, quote support, purchase tracking</li>
-                        <li>Rapid fulfillment for recurring, low-dollar, high-frequency buys</li>
-                        <li>Drop-ship coordination direct to government facilities</li>
-                    </ul>
-                </div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Supply Chain Approach</h3></div>
-                    <ul class="cap-list">
-                        <li>TAA-compliant product sourcing for federal contracts</li>
-                        <li>Authorized wholesale distributor relationships (TAA-compliant sources)</li>
-                        <li>Net-30 supplier terms with PO-backed fulfillment</li>
-                        <li>Drop-ship capable — faster delivery, no overhead</li>
-                        <li>Quote-to-delivery in 1–5 business days</li>
-                        <li>Wholesale pricing passed directly to buyer</li>
-                        <li>Micro-purchase friendly ($0–$10K, GPC accepted)</li>
-                    </ul>
-                </div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Product Categories</h3></div>
-                    <ul class="cap-list">
-                        <li>IT Equipment &amp; Peripherals (TAA Compliant)</li>
-                        <li>Office Supplies &amp; Administrative Materials</li>
-                        <li>Medical Supplies &amp; PPE</li>
-                        <li>HVAC Parts &amp; Equipment</li>
-                        <li>Janitorial &amp; Facilities Maintenance</li>
-                        <li>Safety &amp; Operational Gear</li>
-                        <li>MRO (Maintenance, Repair &amp; Operations)</li>
-                    </ul>
-                </div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Staffing Capabilities</h3></div>
+              <ul class="cap-list">
+                <li>Cleared professional placement (Secret/TS/SCI)</li>
+                <li>IT &amp; cybersecurity talent sourcing</li>
+                <li>HVAC technician and trades staffing</li>
+                <li>Healthcare and medical professional placement</li>
+                <li>Logistics &amp; supply chain workforce solutions</li>
+                <li>Veteran transition employment support</li>
+                <li>Candidate screening, vetting, and compliance</li>
+                <li>Direct-hire and contract-to-hire models</li>
+              </ul>
             </div>
-            <!-- Column 3 -->
-            <div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Differentiators</h3></div>
-                    <ul class="cap-list">
-                        <li>SDVOSB with mission-first execution and compliance-driven approach</li>
-                        <li>21-year senior logistics leader, S4 and Supply NCOIC background</li>
-                        <li>Managed accountability across $1.5B+ in equipment and supplies</li>
-                        <li>Hazmat 61 and ammunition handling certification experience</li>
-                        <li>Active Secret clearance — classified environment ready</li>
-                        <li>Clean communication, documentation, predictable follow-through</li>
-                        <li>Dual capability: staffing AND supply under one vehicle</li>
-                    </ul>
-                </div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Past Performance</h3></div>
-                    <ul class="cap-list">
-                        <li>13+ years coordinating movement, storage, and replenishment of operational supplies</li>
-                        <li>Led recurring procurement cycles, inventory controls, and audit readiness</li>
-                        <li>Supported sustained operations with disciplined logistics and rapid response</li>
-                        <li>Govt operational supply leadership translated into vendor-ready execution</li>
-                    </ul>
-                </div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Execution &amp; Quality</h3></div>
-                    <ul class="cap-list">
-                        <li>Quote capture, vendor comparison, buyer-ready option sets</li>
-                        <li>Order tracking, delivery confirmation, issue resolution</li>
-                        <li>Standardized documentation, status updates, receipt support</li>
-                        <li>Controlled scope, no overpromising, reliable cadence</li>
-                        <li>Single POC accountability — Founder-led execution</li>
-                    </ul>
-                </div>
-                <div class="cap-section">
-                    <div class="cap-section-header"><h3>Target Clients</h3></div>
-                    <ul class="cap-list">
-                        <li>Department of Veterans Affairs (VA)</li>
-                        <li>Department of Defense (DoD) installations</li>
-                        <li>Federal civilian agencies</li>
-                        <li>Texas state agencies (CMBL/VetHUB)</li>
-                        <li>Prime contractors needing SDVOSB sub</li>
-                        <li>Defense contractors (cleared staffing)</li>
-                    </ul>
-                </div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Certifications &amp; Status</h3></div>
+              <ul class="cap-list">
+                <li>SBA-Certified SDVOSB</li>
+                <li>Texas VetHUB Certified</li>
+                <li>CMBL Registered (TX Comptroller)</li>
+                <li>TVC Texas Veteran Commission</li>
+                <li>SAM.gov Active Registration</li>
+                <li>Active Secret Clearance (through 2030)</li>
+                <li>CompTIA Security+, AWS CCP, ServiceNow</li>
+              </ul>
             </div>
+          </div>
+
+          <!-- Col 2 -->
+          <div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Core Supply Capabilities</h3></div>
+              <ul class="cap-list">
+                <li>
+                  General product procurement, sourcing, and delivery
+                  coordination
+                </li>
+                <li>
+                  IT equipment: laptops, monitors, peripherals, networking (TAA
+                  compliant)
+                </li>
+                <li>
+                  Administrative and office supplies, consumables, small
+                  equipment
+                </li>
+                <li>Medical supplies, PPE, gloves, gowns, safety equipment</li>
+                <li>HVAC parts, equipment, maintenance supplies</li>
+                <li>
+                  Facilities and maintenance supplies, safety gear, janitorial
+                </li>
+                <li>
+                  Operational mission support materials, packaging, kitting
+                </li>
+                <li>Vendor sourcing, quote support, purchase tracking</li>
+                <li>
+                  Rapid fulfillment for recurring, low-dollar, high-frequency
+                  buys
+                </li>
+                <li>Drop-ship coordination direct to government facilities</li>
+              </ul>
+            </div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Supply Chain Approach</h3></div>
+              <ul class="cap-list">
+                <li>TAA-compliant product sourcing for federal contracts</li>
+                <li>Authorized wholesale distributor relationships</li>
+                <li>Net-30 supplier terms with PO-backed fulfillment</li>
+                <li>Drop-ship capable faster delivery, no overhead</li>
+                <li>Quote-to-delivery in 1–5 business days</li>
+                <li>Wholesale pricing passed directly to buyer</li>
+                <li>Micro-purchase friendly ($0–$10K, GPC accepted)</li>
+              </ul>
+            </div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Product Categories</h3></div>
+              <ul class="cap-list">
+                <li>IT Equipment &amp; Peripherals (TAA Compliant)</li>
+                <li>Office Supplies &amp; Administrative Materials</li>
+                <li>Medical Supplies &amp; PPE</li>
+                <li>HVAC Parts &amp; Equipment</li>
+                <li>Janitorial &amp; Facilities Maintenance</li>
+                <li>Safety &amp; Operational Gear</li>
+                <li>MRO (Maintenance, Repair &amp; Operations)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Col 3 -->
+          <div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Differentiators</h3></div>
+              <ul class="cap-list">
+                <li>
+                  SDVOSB with mission-first execution and compliance-driven
+                  approach
+                </li>
+                <li>
+                  21-year senior logistics leader, S4 and Supply NCOIC
+                  background
+                </li>
+                <li>
+                  Managed accountability across $1.5B+ in equipment and supplies
+                </li>
+                <li>
+                  Hazmat 61 and ammunition handling certification experience
+                </li>
+                <li>Active Secret clearance classified environment ready</li>
+                <li>
+                  Clean communication, documentation, predictable follow-through
+                </li>
+                <li>Dual capability: staffing AND supply under one vehicle</li>
+              </ul>
+            </div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Past Performance</h3></div>
+              <ul class="cap-list">
+                <li>
+                  13+ years coordinating movement, storage, and replenishment of
+                  operational supplies
+                </li>
+                <li>
+                  Led recurring procurement cycles, inventory controls, and
+                  audit readiness
+                </li>
+                <li>
+                  Supported sustained operations with disciplined logistics and
+                  rapid response
+                </li>
+                <li>
+                  Govt operational supply leadership translated into
+                  vendor-ready execution
+                </li>
+              </ul>
+            </div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Execution &amp; Quality</h3></div>
+              <ul class="cap-list">
+                <li>
+                  Quote capture, vendor comparison, buyer-ready option sets
+                </li>
+                <li>Order tracking, delivery confirmation, issue resolution</li>
+                <li>
+                  Standardized documentation, status updates, receipt support
+                </li>
+                <li>Controlled scope, no overpromising, reliable cadence</li>
+                <li>Single POC accountability Founder-led execution</li>
+              </ul>
+            </div>
+            <div class="cap-section">
+              <div class="cap-head"><h3>Target Clients</h3></div>
+              <ul class="cap-list">
+                <li>Department of Veterans Affairs (VA)</li>
+                <li>Department of Defense (DoD) installations</li>
+                <li>Federal civilian agencies</li>
+                <li>Texas state agencies (CMBL/VetHUB)</li>
+                <li>Prime contractors needing SDVOSB sub</li>
+                <li>Defense contractors (cleared staffing)</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- ============================================================
-         CONTRACT VEHICLES PAGE
-         ============================================================ -->
-    <div class="page-section" id="page-contract-vehicles">
-        <div class="cv-header">
-            <h1>CONTRACT VEHICLES</h1>
-            <p>Multiple pathways for government agencies, primes, and education buyers to procure staffing and supply services from Imperio.</p>
+      <!-- ── CONTRACT VEHICLES ── -->
+      <section class="section" id="contract-vehicles">
+        <div class="cv-band">
+          <h1>CONTRACT VEHICLES</h1>
+          <p>
+            Multiple pathways for government agencies, primes, and education
+            buyers to procure staffing and supply services from Imperio.
+          </p>
         </div>
 
-        <div class="cv-content">
-
-            <!-- FEDERAL -->
-            <div class="cv-category">
-                <h2 class="cv-category-title">Federal</h2>
-                <div class="cv-category-sub">Available to all federal agencies and approved contractors</div>
-                <div class="cv-grid">
-                    <div class="cv-card">
-                        <span class="cv-status active">Active</span>
-                        <h4>SDVOSB Sole Source</h4>
-                        <p>Direct award to Imperio without competition. Available to any federal contracting officer for contracts up to $5M.</p>
-                        <div class="cv-detail"><strong>Authority:</strong> FAR 19.1405 &nbsp;|&nbsp; <strong>Ceiling:</strong> $5M</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status active">Active</span>
-                        <h4>SDVOSB Set-Aside</h4>
-                        <p>Competitive procurement restricted to SDVOSB vendors. Imperio competes against a smaller, qualified pool.</p>
-                        <div class="cv-detail"><strong>Authority:</strong> FAR 19.1405 &nbsp;|&nbsp; <strong>Type:</strong> Competitive</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status active">Active</span>
-                        <h4>Micro-Purchase (Open Market)</h4>
-                        <p>Direct purchase with a Government Purchase Card (GPC). No competition required. Fast, simple transactions.</p>
-                        <div class="cv-detail"><strong>Threshold:</strong> Up to $10,000 &nbsp;|&nbsp; <strong>Payment:</strong> GPC Card</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status active">Active</span>
-                        <h4>SAM.gov Open Market</h4>
-                        <p>Registered and searchable on SAM.gov for direct award and competitive opportunities across all federal agencies.</p>
-                        <div class="cv-detail"><strong>UEI:</strong> YCTTJHXH69A6 &nbsp;|&nbsp; <strong>CAGE:</strong> 152U4</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status active">Active</span>
-                        <h4>VA Veterans First</h4>
-                        <p>The VA gives SDVOSBs first priority under the Veterans First Contracting Program. Sole source up to $5M.</p>
-                        <div class="cv-detail"><strong>Authority:</strong> 38 U.S.C. § 8127 &nbsp;|&nbsp; <strong>Priority:</strong> Tier 1</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status coming">Coming Soon</span>
-                        <h4>GSA Schedule (MAS)</h4>
-                        <p>Federal supply schedule providing pre-negotiated pricing and streamlined ordering for all federal agencies.</p>
-                        <div class="cv-detail"><strong>Status:</strong> Application in process</div>
-                    </div>
+        <div class="cv-body">
+          <div class="cv-category">
+            <div class="cv-cat-title">Federal</div>
+            <div class="cv-cat-sub">
+              Available to all federal agencies and approved contractors
+            </div>
+            <div class="cv-grid">
+              <div class="cv-card">
+                <span class="cv-status active">Active</span>
+                <h4>SDVOSB Sole Source</h4>
+                <p>
+                  Direct award to Imperio without competition. Available to any
+                  federal contracting officer for contracts up to $5M.
+                </p>
+                <div class="cv-detail">
+                  <strong>Authority:</strong> FAR 19.1405 &nbsp;|&nbsp;
+                  <strong>Ceiling:</strong> $5M
                 </div>
-            </div>
-
-            <!-- STATE OF TEXAS -->
-            <div class="cv-category">
-                <h2 class="cv-category-title">State of Texas</h2>
-                <div class="cv-category-sub">Available to Texas state agencies, municipalities, and authorized purchasers</div>
-                <div class="cv-grid">
-                    <div class="cv-card">
-                        <span class="cv-status active">Active</span>
-                        <h4>CMBL Registered Vendor</h4>
-                        <p>Listed on the Texas Centralized Master Bidders List through the Comptroller of Public Accounts. Searchable by all state buyers.</p>
-                        <div class="cv-detail"><strong>Vendor #:</strong> 13930515203 &nbsp;|&nbsp; <strong>Expires:</strong> Feb 2027</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status active">Active</span>
-                        <h4>VetHUB Certified</h4>
-                        <p>Texas Veterans Heroes United in Business certification. Veteran set-aside preference for state purchasing.</p>
-                        <div class="cv-detail"><strong>Program:</strong> TX Comptroller HUB Program</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status active">Active</span>
-                        <h4>ESBD / Texas SmartBuy</h4>
-                        <p>Receives automatic bid notifications through the Electronic State Business Daily for matching solicitations.</p>
-                        <div class="cv-detail"><strong>Portal:</strong> txsmartbuy.com/esbd</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status coming">Coming Soon</span>
-                        <h4>DIR Contract (IT)</h4>
-                        <p>Texas Department of Information Resources contract for IT equipment and services to state agencies and school districts.</p>
-                        <div class="cv-detail"><strong>Status:</strong> Registration planned</div>
-                    </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status active">Active</span>
+                <h4>SDVOSB Set-Aside</h4>
+                <p>
+                  Competitive procurement restricted to SDVOSB vendors. Imperio
+                  competes against a smaller, qualified pool.
+                </p>
+                <div class="cv-detail">
+                  <strong>Authority:</strong> FAR 19.1405 &nbsp;|&nbsp;
+                  <strong>Type:</strong> Competitive
                 </div>
-            </div>
-
-            <!-- EDUCATION & COOPERATIVE -->
-            <div class="cv-category">
-                <h2 class="cv-category-title">Education &amp; Cooperative Purchasing</h2>
-                <div class="cv-category-sub">Available to school districts, universities, counties, and cooperative members</div>
-                <div class="cv-grid">
-                    <div class="cv-card">
-                        <span class="cv-status coming">Coming Soon</span>
-                        <h4>BuyBoard</h4>
-                        <p>Texas cooperative purchasing program used by school districts, cities, and counties. Members purchase directly without separate RFPs.</p>
-                        <div class="cv-detail"><strong>Members:</strong> 7,000+ entities &nbsp;|&nbsp; <strong>Site:</strong> buyboard.com</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status coming">Coming Soon</span>
-                        <h4>TIPS / TAPS</h4>
-                        <p>The Interlocal Purchasing System — national cooperative used heavily by Texas school districts and local governments.</p>
-                        <div class="cv-detail"><strong>Members:</strong> Nationwide &nbsp;|&nbsp; <strong>Site:</strong> tips-usa.com</div>
-                    </div>
-                    <div class="cv-card">
-                        <span class="cv-status coming">Coming Soon</span>
-                        <h4>Sourcewell / OMNIA Partners</h4>
-                        <p>National cooperative purchasing organizations serving education, government, and nonprofit buyers across all 50 states.</p>
-                        <div class="cv-detail"><strong>Scope:</strong> National &nbsp;|&nbsp; <strong>Type:</strong> Cooperative</div>
-                    </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status active">Active</span>
+                <h4>Micro-Purchase (Open Market)</h4>
+                <p>
+                  Direct purchase with a Government Purchase Card (GPC). No
+                  competition required. Fast, simple transactions.
+                </p>
+                <div class="cv-detail">
+                  <strong>Threshold:</strong> Up to $10,000 &nbsp;|&nbsp;
+                  <strong>Payment:</strong> GPC Card
                 </div>
-            </div>
-
-            <!-- PRIME CONTRACTOR -->
-            <div class="cv-category">
-                <h2 class="cv-category-title">Prime Contractor Teaming</h2>
-                <div class="cv-category-sub">SDVOSB subcontracting credit for prime contractors</div>
-                <div class="cv-grid">
-                    <div class="cv-card">
-                        <span class="cv-status active">Active</span>
-                        <h4>SDVOSB Subcontractor</h4>
-                        <p>Primes receive SDVOSB subcontracting credit by teaming with Imperio on staffing and/or supply requirements. Helps meet the federal 5% SDVOSB goal.</p>
-                        <div class="cv-detail"><strong>Federal Goal:</strong> 5% of all contracting dollars &nbsp;|&nbsp; <strong>Capability:</strong> Staffing + Supply</div>
-                    </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status active">Active</span>
+                <h4>SAM.gov Open Market</h4>
+                <p>
+                  Registered and searchable on SAM.gov for direct award and
+                  competitive opportunities across all federal agencies.
+                </p>
+                <div class="cv-detail">
+                  <strong>UEI:</strong> YCTTJHXH69A6 &nbsp;|&nbsp;
+                  <strong>CAGE:</strong> 152U4
                 </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status active">Active</span>
+                <h4>VA Veterans First</h4>
+                <p>
+                  The VA gives SDVOSBs first priority under the Veterans First
+                  Contracting Program. Sole source up to $5M.
+                </p>
+                <div class="cv-detail">
+                  <strong>Authority:</strong> 38 U.S.C. § 8127 &nbsp;|&nbsp;
+                  <strong>Priority:</strong> Tier 1
+                </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status coming">Coming Soon</span>
+                <h4>GSA Schedule (MAS)</h4>
+                <p>
+                  Federal supply schedule providing pre-negotiated pricing and
+                  streamlined ordering for all federal agencies.
+                </p>
+                <div class="cv-detail">
+                  <strong>Status:</strong> Application in process
+                </div>
+              </div>
             </div>
+          </div>
 
-            <!-- CTA -->
-            <div class="cv-cta">
-                <h3>Ready to Partner?</h3>
-                <p>Whether you're a contracting officer, prime contractor, or purchasing agent — Imperio is ready to deliver.</p>
-                <a class="cta-btn cta-primary" href="#" onclick="showPage('contact'); return false;">Contact Us</a>
+          <div class="cv-category">
+            <div class="cv-cat-title">State of Texas</div>
+            <div class="cv-cat-sub">
+              Available to Texas state agencies, municipalities, and authorized
+              purchasers
             </div>
+            <div class="cv-grid">
+              <div class="cv-card">
+                <span class="cv-status active">Active</span>
+                <h4>CMBL Registered Vendor</h4>
+                <p>
+                  Listed on the Texas Centralized Master Bidders List through
+                  the Comptroller of Public Accounts.
+                </p>
+                <div class="cv-detail">
+                  <strong>Vendor #:</strong> 13930515203 &nbsp;|&nbsp;
+                  <strong>Expires:</strong> Feb 2027
+                </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status active">Active</span>
+                <h4>VetHUB Certified</h4>
+                <p>
+                  Texas Veterans Heroes United in Business certification.
+                  Veteran set-aside preference for state purchasing.
+                </p>
+                <div class="cv-detail">
+                  <strong>Program:</strong> TX Comptroller HUB Program
+                </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status active">Active</span>
+                <h4>ESBD / Texas SmartBuy</h4>
+                <p>
+                  Receives automatic bid notifications through the Electronic
+                  State Business Daily for matching solicitations.
+                </p>
+                <div class="cv-detail">
+                  <strong>Portal:</strong> txsmartbuy.com/esbd
+                </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status coming">Coming Soon</span>
+                <h4>DIR Contract (IT)</h4>
+                <p>
+                  Texas Department of Information Resources contract for IT
+                  equipment and services to state agencies and school districts.
+                </p>
+                <div class="cv-detail">
+                  <strong>Status:</strong> Registration planned
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-category">
+            <div class="cv-cat-title">Education &amp; Cooperative</div>
+            <div class="cv-cat-sub">
+              Available to school districts, universities, counties, and
+              cooperative members
+            </div>
+            <div class="cv-grid">
+              <div class="cv-card">
+                <span class="cv-status coming">Coming Soon</span>
+                <h4>BuyBoard</h4>
+                <p>
+                  Texas cooperative purchasing program used by school districts,
+                  cities, and counties.
+                </p>
+                <div class="cv-detail">
+                  <strong>Members:</strong> 7,000+ entities &nbsp;|&nbsp;
+                  <strong>Site:</strong> buyboard.com
+                </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status coming">Coming Soon</span>
+                <h4>TIPS / TAPS</h4>
+                <p>
+                  The Interlocal Purchasing System national cooperative used
+                  heavily by Texas school districts and local governments.
+                </p>
+                <div class="cv-detail">
+                  <strong>Members:</strong> Nationwide &nbsp;|&nbsp;
+                  <strong>Site:</strong> tips-usa.com
+                </div>
+              </div>
+              <div class="cv-card">
+                <span class="cv-status coming">Coming Soon</span>
+                <h4>Sourcewell / OMNIA Partners</h4>
+                <p>
+                  National cooperative purchasing organizations serving
+                  education, government, and nonprofit buyers across all 50
+                  states.
+                </p>
+                <div class="cv-detail">
+                  <strong>Scope:</strong> National &nbsp;|&nbsp;
+                  <strong>Type:</strong> Cooperative
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-category">
+            <div class="cv-cat-title">Prime Contractor Teaming</div>
+            <div class="cv-cat-sub">
+              SDVOSB subcontracting credit for prime contractors
+            </div>
+            <div class="cv-grid">
+              <div class="cv-card">
+                <span class="cv-status active">Active</span>
+                <h4>SDVOSB Subcontractor</h4>
+                <p>
+                  Primes receive SDVOSB subcontracting credit by teaming with
+                  Imperio on staffing and/or supply requirements. Helps meet the
+                  federal 5% SDVOSB goal.
+                </p>
+                <div class="cv-detail">
+                  <strong>Federal Goal:</strong> 5% of all contracting dollars
+                  &nbsp;|&nbsp; <strong>Capability:</strong> Staffing + Supply
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-cta">
+            <h3>Ready to Partner?</h3>
+            <p>
+              Whether you're a contracting officer, prime contractor, or
+              purchasing agent Imperio is ready to deliver.
+            </p>
+            <a class="cta-btn cta-primary" href="#contact">Contact Us</a>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- ============================================================
-         CONTACT PAGE
-         ============================================================ -->
-    <div class="page-section" id="page-contact">
-        <div style="height:40px;background:var(--bg-dark);"></div>
-        <div class="section-dark">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>GET IN TOUCH</h2>
-                    <div class="gold-divider"></div>
-                    <div class="contact-item">
-                        <div class="label">Founder &amp; CEO</div>
-                        <div class="value">Anthony K. Kelley Sr.</div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="label">Email</div>
-                        <div class="value"><a href="mailto:anthony@imperiovita.co">anthony@imperiovita.co</a></div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="label">Phone</div>
-                        <div class="value"><a href="tel:+12542265216">(254) 226-5216</a></div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="label">Website</div>
-                        <div class="value"><a href="https://www.imperiovita.co" target="_blank">www.imperiovita.co</a></div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="label">Location</div>
-                        <div class="value">Killeen, Texas (Near Fort Cavazos)</div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="label">Service Area</div>
-                        <div class="value">Nationwide</div>
-                    </div>
-                    <div style="margin-top:30px;padding:20px;border:1px solid var(--border-gold);background:var(--bg-card);">
-                        <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;">QUICK REFERENCE</div>
-                        <div style="font-family:'Raleway',sans-serif;font-size:12px;color:var(--light-gray);line-height:2;">
-                            UEI: YCTTJHXH69A6<br>
-                            CAGE: 152U4<br>
-                            SDVOSB &bull; VetHUB &bull; CMBL &bull; TVC<br>
-                            Secret Clearance (Active through 2030)
-                        </div>
-                    </div>
+      <!-- ── CONTACT ── -->
+      <section
+        class="section"
+        id="contact"
+        style="background: var(--bg-section)"
+      >
+        <div class="inner">
+          <div class="s-eyebrow">Connect</div>
+          <h2 class="s-title">Get In Touch</h2>
+          <div class="gold-divider"></div>
+
+          <div class="contact-grid">
+            <div class="contact-info">
+              <h2>GET IN TOUCH</h2>
+              <div class="contact-item">
+                <div class="label">Founder &amp; CEO</div>
+                <div class="value">Anthony K. Kelley Sr.</div>
+              </div>
+              <div class="contact-item">
+                <div class="label">Email</div>
+                <div class="value">
+                  <a href="mailto:anthony@imperiovita.co"
+                    >anthony@imperiovita.co</a
+                  >
                 </div>
-                <div class="contact-form">
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <input type="text" placeholder="Organization">
-                    <input type="text" placeholder="Subject">
-                    <textarea placeholder="How can we help?"></textarea>
-                    <button class="cta-btn cta-primary" style="width:100%;text-align:center;">Send Message</button>
+              </div>
+              <div class="contact-item">
+                <div class="label">Phone</div>
+                <div class="value">
+                  <a href="tel:+12542265216">(254) 226-5216</a>
                 </div>
+              </div>
+              <div class="contact-item">
+                <div class="label">Website</div>
+                <div class="value">
+                  <a href="https://www.imperiovita.co" target="_blank"
+                    >www.imperiovita.co</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="label">Location</div>
+                <div class="value">Killeen, Texas (Near Fort Cavazos)</div>
+              </div>
+              <div class="contact-item">
+                <div class="label">Service Area</div>
+                <div class="value">Nationwide</div>
+              </div>
+              <div class="qref">
+                <div class="qref-lbl">Quick Reference</div>
+                <p>
+                  UEI: YCTTJHXH69A6<br />CAGE: 152U4<br />SDVOSB · VetHUB · CMBL
+                  · TVC<br />Secret Clearance (Active through 2030)
+                </p>
+              </div>
             </div>
-        </div>
-    </div>
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="site-footer">
+            <div class="contact-form">
+              <input type="text" placeholder="Name" />
+              <input type="email" placeholder="Email" />
+              <input type="text" placeholder="Organization" />
+              <input type="text" placeholder="Subject" />
+              <textarea placeholder="How can we help?"></textarea>
+              <button type="button">Send Message</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FOOTER ── -->
+      <footer>
         <div class="footer-inner">
-            <div class="footer-left">
-                <h3>Imperio Talent Solutions</h3>
-                <p>A Division of The House of Kel LLC</p>
-                <div class="footer-contact" style="margin-top:8px;">
-                    <a href="tel:+12542265216">(254) 226-5216</a> &nbsp;|&nbsp;
-                    <a href="mailto:anthony@imperiovita.co">anthony@imperiovita.co</a> &nbsp;|&nbsp;
-                    <a href="https://www.imperiovita.co">www.imperiovita.co</a>
-                </div>
+          <div class="footer-left">
+            <h3>Imperio Talent Solutions</h3>
+            <p>A Division of The House of Kel LLC</p>
+            <div class="footer-contact">
+              <a href="tel:+12542265216">(254) 226-5216</a> &nbsp;|&nbsp;
+              <a href="mailto:anthony@imperiovita.co">anthony@imperiovita.co</a>
+              &nbsp;|&nbsp;
+              <a href="https://www.imperiovita.co" target="_blank"
+                >www.imperiovita.co</a
+              >
             </div>
-            <div class="footer-right">
-                <div class="footer-certs">SDVOSB &bull; VetHUB &bull; CMBL &bull; TVC &bull; SAM.gov</div>
-                <div class="footer-copy">&copy; 2026 The House of Kel LLC. All Rights Reserved.</div>
+          </div>
+          <div class="footer-right">
+            <div class="footer-certs">
+              SDVOSB · VetHUB · CMBL · TVC · SAM.gov
             </div>
+            <div class="footer-copy">
+              &copy; 2026 The House of Kel LLC. All Rights Reserved.
+            </div>
+          </div>
         </div>
-    </footer>
+      </footer>
+    </main>
 
-    <!-- ============ JAVASCRIPT ============ -->
     <script>
-        // Hamburger toggle
-        function toggleMenu() {
-            document.getElementById('hamburger').classList.toggle('open');
-            document.getElementById('navOverlay').classList.toggle('open');
-            document.body.style.overflow = document.getElementById('navOverlay').classList.contains('open') ? 'hidden' : '';
-        }
+      // ── Sidebar active link on scroll ──
+      const sectionEls = document.querySelectorAll(".section[id]");
+      const navLinks = document.querySelectorAll(
+        ".sidebar-nav .nav-link:not(.ext)",
+      );
 
-        // Page navigation
-        function showPage(page) {
-            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-            const target = document.getElementById('page-' + page);
-            if (target) {
-                target.classList.add('active');
-                window.scrollTo(0, 0);
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              const id = e.target.id;
+              navLinks.forEach((l) => {
+                l.classList.remove("active");
+                if (l.getAttribute("href") === "#" + id)
+                  l.classList.add("active");
+              });
             }
-        }
+          });
+        },
+        { threshold: 0.3 },
+      );
 
-        // Scrolled top bar effect
-        window.addEventListener('scroll', () => {
-            document.getElementById('topBar').classList.toggle('scrolled', window.scrollY > 20);
-        });
+      sectionEls.forEach((s) => io.observe(s));
 
-        // Close menu on escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && document.getElementById('navOverlay').classList.contains('open')) {
-                toggleMenu();
-            }
-        });
+      // ── Mobile menu ──
+      function toggleMenu() {
+        document.getElementById("hbg").classList.toggle("open");
+        document.getElementById("mobileMenu").classList.toggle("open");
+      }
+
+      function closeMenu() {
+        document.getElementById("hbg").classList.remove("open");
+        document.getElementById("mobileMenu").classList.remove("open");
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
     </script>
-</body>
+  </body>
 </html>

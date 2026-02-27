@@ -3,73 +3,1296 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000">
-    <link rel="manifest" href="/manifest.json">
-
-    <meta name="theme-color" content="#8B0000">
+    <meta name="theme-color" content="#8B0000" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="./images/crown.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="./images/crown512.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/imperio-icon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/imperio-icon-192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/imperio-icon-180.png"
+    />
 
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": ["Organization", "ProfessionalService"],
-  "@id": "https://imperiovita.co/#organization",
-  "name": "Imperio Talent Solutions",
-  "legalName": "The House of Kel LLC",
-  "url": "https://imperiovita.co",
-  "logo": "https://imperiovita.co/images/imperio-icon-512.png",
-  "image": "https://imperiovita.co/images/imperio-icon-512.png",
-  "description": "Veteran-Owned Staffing & Recruiting Solutions serving Texas and nationwide.",
-  "telephone": "+1-254-265-9335",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Killeen",
-    "addressRegion": "TX",
-    "addressCountry": "US"
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Anthony K. Kelley Sr."
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/imperio-talent-solutions"
-  ]
-}
-</script>
-
-
-
-
+      {
+        "@context": "https://schema.org",
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://imperiovita.co/#organization",
+        "name": "Imperio Talent Solutions",
+        "legalName": "The House of Kel LLC",
+        "url": "https://imperiovita.co",
+        "logo": "https://imperiovita.co/images/imperio-icon-512.png",
+        "image": "https://imperiovita.co/images/imperio-icon-512.png",
+        "description": "Veteran-Owned Staffing & Recruiting Solutions serving Texas and nationwide.",
+        "telephone": "+1-254-265-9335",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Killeen",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "founder": { "@type": "Person", "name": "Anthony K. Kelley Sr." },
+        "sameAs": ["https://www.linkedin.com/company/imperio-talent-solutions"]
+      }
+    </script>
 
     <title>Imperio Talent Solutions | Elite Veteran-Owned Recruiting</title>
     <link rel="stylesheet" href="style/index.css" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/imperio-icon-32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./images/imperio-icon-192.png">
-
-    <!-- Apple / Mobile -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/imperio-icon-180.png">
-
-    <!-- Android / Google -->
-    <link rel="icon" type="image/png" sizes="512x512" href="./images/imperio-icon-512.png">
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;600&family=Lato:wght@300;400&family=Cormorant+Garamond:ital,wght@1,300;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;600&family=Lato:wght@300;400&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      :root {
+        --red-deep: #5c0a0a;
+        --red-blood: #8b0000;
+        --red-mid: #a00000;
+        --gold-dark: #7a5a10;
+        --gold-rich: #b8932a;
+        --gold-pure: #ffd700;
+        --gold-pale: #f4e3a1;
+        --gold-light: #ffe88a;
+        --bg: #3d0000;
+        --bg2: #2e0000;
+        --ink: #f0ede6;
+        --muted: #f0c8a0;
+        --border: rgba(197, 160, 40, 0.35);
+        --gap: clamp(1rem, 3vw, 2.5rem);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Lato", sans-serif;
+        font-size: clamp(14px, 2vw, 16px);
+        line-height: 1.7;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .gold-text {
+        background: linear-gradient(
+          135deg,
+          #c8922a 0%,
+          #e8b84b 20%,
+          #fdeea3 38%,
+          #ffd700 50%,
+          #fdeea3 62%,
+          #c8922a 80%,
+          #e8b84b 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      section {
+        padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 3rem);
+      }
+
+      .section-label {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: clamp(9px, 1.5vw, 11px);
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--gold-rich);
+        margin-bottom: 0.6rem;
+        opacity: 0.9;
+      }
+
+      .section-heading {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.4rem, 4vw, 2.4rem);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+      }
+
+      .section-heading.gold-text {
+        background: linear-gradient(
+          135deg,
+          #c8922a 0%,
+          #fdeea3 40%,
+          #ffd700 50%,
+          #fdeea3 60%,
+          #c8922a 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 50% 30%,
+            rgba(139, 0, 0, 0.35) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 50% 80%,
+            rgba(197, 160, 40, 0.06) 0%,
+            transparent 60%
+          ),
+          linear-gradient(180deg, #250000 0%, #3d0000 50%, #2e0000 100%);
+        padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem);
+        position: relative;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold-dark),
+          transparent
+        );
+      }
+
+      .hero-content {
+        max-width: min(680px, 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(0.5rem, 1.5vw, 1rem);
+      }
+
+      .hero-title {
+        font-family: "Cinzel", serif;
+        font-weight: 900;
+        font-size: clamp(2.8rem, 12vw, 6.5rem);
+        letter-spacing: 0.18em;
+        line-height: 1;
+        background: linear-gradient(
+          to bottom,
+          #cf972d 22%,
+          #f9f295 45%,
+          #e0aa3e 50%,
+          #b8860b 55%,
+          #f9f295 78%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-family: "Cinzel", serif;
+        font-weight: 700;
+        font-size: clamp(0.9rem, 3.5vw, 1.6rem);
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--ink);
+        opacity: 0.85;
+      }
+
+      .hero-divider-luxury {
+        width: min(340px, 90%);
+        margin: 0.25rem auto;
+      }
+      .hero-divider-luxury svg {
+        width: 100%;
+        height: auto;
+      }
+
+      .hero-tagline {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: clamp(0.65rem, 2vw, 0.85rem);
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold-rich);
+        opacity: 0.9;
+      }
+
+      .hero-body {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.8rem, 2.2vw, 1rem);
+        color: var(--muted);
+        max-width: 54ch;
+        line-height: 1.75;
+      }
+
+      .hero-body span {
+        display: block;
+        margin-top: 0.6rem;
+        font-size: clamp(0.7rem, 1.8vw, 0.82rem);
+        letter-spacing: 0.06em;
+        color: var(--gold-pale);
+        opacity: 0.9;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+
+      .btn {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: clamp(0.7rem, 2vw, 0.85rem);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: clamp(0.7rem, 2vw, 0.9rem) clamp(1.2rem, 3vw, 2rem);
+        border: 1px solid;
+        cursor: pointer;
+        transition: all 0.35s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 215, 0, 0.18),
+          transparent
+        );
+        transform: translateX(-110%);
+        transition: transform 0.5s ease;
+      }
+      .btn:hover::before {
+        transform: translateX(110%);
+      }
+
+      .btn-red {
+        background: linear-gradient(135deg, #3d0606, #6b0000);
+        border-color: rgba(197, 160, 40, 0.5);
+        color: var(--gold-pale);
+      }
+      .btn-red:hover {
+        border-color: var(--gold-rich);
+        box-shadow: 0 0 24px rgba(139, 0, 0, 0.6);
+        color: var(--gold-light);
+      }
+
+      .btn-gold {
+        background: linear-gradient(135deg, var(--gold-dark), var(--gold-rich));
+        border-color: var(--gold-rich);
+        color: #2a0404;
+      }
+      .btn-gold:hover {
+        background: linear-gradient(135deg, var(--gold-rich), var(--gold-pure));
+        box-shadow: 0 0 24px rgba(197, 160, 40, 0.4);
+      }
+
+      /* ── NAV BUTTONS ── */
+      .nav-section {
+        background: var(--bg2);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 4vw, 3rem);
+      }
+
+      .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+        gap: clamp(0.8rem, 2vw, 1.5rem);
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .nav-btn {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: clamp(1.4rem, 3vw, 2.2rem) clamp(1rem, 2vw, 1.8rem);
+        background: linear-gradient(
+          135deg,
+          #3d0606 0%,
+          #6b0000 50%,
+          #3d0606 100%
+        );
+        border: 1.5px solid var(--gold-dark);
+        border-radius: 4px;
+        text-decoration: none;
+        color: var(--gold-pale);
+        font-family: "Cinzel", serif;
+        font-size: clamp(0.65rem, 1.8vw, 0.82rem);
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-align: center;
+        overflow: hidden;
+        box-shadow:
+          0 4px 18px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 215, 0, 0.15);
+        transition:
+          transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+          border-color 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .nav-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 215, 0, 0.22),
+          transparent
+        );
+        transform: translateX(-110%);
+        transition: transform 0.5s ease;
+        pointer-events: none;
+      }
+      .nav-btn:hover::before {
+        transform: translateX(110%);
+      }
+
+      .nav-btn::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--gold-dark),
+          var(--gold-pure),
+          var(--gold-dark)
+        );
+        transition: width 0.4s ease;
+      }
+      .nav-btn:hover::after {
+        width: 80%;
+      }
+
+      .nav-btn:hover {
+        transform: translateY(-6px) scale(1.02);
+        border-color: var(--gold-pure);
+        box-shadow:
+          0 10px 36px rgba(255, 215, 0, 0.3),
+          0 0 30px rgba(139, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 215, 0, 0.32);
+      }
+
+      .nav-btn .c {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border: 1.5px solid var(--gold-pure);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .nav-btn:hover .c {
+        opacity: 1;
+      }
+      .c.tl {
+        top: 7px;
+        left: 7px;
+        border-right: none;
+        border-bottom: none;
+      }
+      .c.tr {
+        top: 7px;
+        right: 7px;
+        border-left: none;
+        border-bottom: none;
+      }
+      .c.bl {
+        bottom: 7px;
+        left: 7px;
+        border-right: none;
+        border-top: none;
+      }
+      .c.br {
+        bottom: 7px;
+        right: 7px;
+        border-left: none;
+        border-top: none;
+      }
+
+      .nav-btn-icon {
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+      }
+      .nav-btn-label {
+        font-size: clamp(0.62rem, 1.6vw, 0.78rem);
+      }
+
+      /* ── WHO WE SERVE ── */
+      .who-we-serve {
+        background: var(--bg);
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem);
+      }
+
+      .venture-list {
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .venture-card {
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        align-items: stretch;
+        background: rgba(50, 0, 0, 0.55);
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+        transition: background 0.3s ease;
+      }
+
+      .venture-card:last-child {
+        border-bottom: none;
+      }
+
+      .venture-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 215, 0, 0.06),
+          transparent
+        );
+        transform: translateX(-110%);
+        transition: transform 0.6s ease;
+        pointer-events: none;
+      }
+      .venture-card:hover::before {
+        transform: translateX(110%);
+      }
+      .venture-card:hover {
+        background: rgba(70, 0, 0, 0.7);
+      }
+
+      .v-icon-col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem;
+        border-right: 1px solid var(--border);
+        background: rgba(90, 0, 0, 0.5);
+        flex-shrink: 0;
+      }
+
+      .v-icon-col .ico {
+        font-size: clamp(1.6rem, 3vw, 2rem);
+        filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.35));
+        transition:
+          filter 0.3s,
+          transform 0.3s;
+      }
+
+      .venture-card:hover .v-icon-col .ico {
+        filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.7));
+        transform: scale(1.1);
+      }
+
+      .v-content {
+        padding: clamp(0.9rem, 2vw, 1.4rem) clamp(1rem, 2.5vw, 1.8rem);
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .v-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(0.85rem, 2vw, 1.1rem);
+        font-weight: 700;
+        background: linear-gradient(
+          135deg,
+          #c8922a 0%,
+          #e8b84b 20%,
+          #fdeea3 38%,
+          #ffd700 50%,
+          #fdeea3 62%,
+          #c8922a 80%,
+          #e8b84b 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 0.08em;
+      }
+
+      .v-desc {
+        font-family: "Lato", sans-serif;
+        font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+        color: rgba(244, 227, 161, 0.75);
+        line-height: 1.65;
+      }
+
+      .v-list {
+        list-style: none;
+        margin-top: 0.3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+
+      .v-list li {
+        font-family: "Lato", sans-serif;
+        font-size: clamp(0.7rem, 1.6vw, 0.82rem);
+        color: var(--muted);
+        padding-left: 1rem;
+        position: relative;
+      }
+
+      .v-list li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: var(--gold-dark);
+      }
+
+      /* ── SPECIALIZATIONS ── */
+      .specializations {
+        background: var(--bg2);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem);
+      }
+
+      .spec-wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .spec-grid {
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .spec-card {
+        background: rgba(50, 0, 0, 0.55);
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+        transition: background 0.3s;
+        padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 2.5vw, 1.8rem);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .spec-card:nth-child(2n) {
+        border-right: none;
+      }
+      .spec-card:nth-child(3),
+      .spec-card:nth-child(4) {
+        border-bottom: none;
+      }
+
+      .spec-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          transparent,
+          rgba(255, 215, 0, 0.05),
+          transparent
+        );
+        transform: translateX(-110%);
+        transition: transform 0.6s ease;
+        pointer-events: none;
+      }
+      .spec-card:hover::before {
+        transform: translateX(110%);
+      }
+      .spec-card:hover {
+        background: rgba(100, 0, 0, 0.6);
+      }
+
+      .spec-icon {
+        font-size: clamp(1.6rem, 3vw, 2rem);
+        filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.3));
+        transition:
+          filter 0.3s,
+          transform 0.3s;
+      }
+      .spec-card:hover .spec-icon {
+        filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.65));
+        transform: scale(1.08);
+      }
+
+      .spec-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(0.82rem, 2vw, 1.05rem);
+        font-weight: 700;
+        background: linear-gradient(
+          135deg,
+          #c8922a 0%,
+          #fdeea3 40%,
+          #ffd700 50%,
+          #fdeea3 60%,
+          #c8922a 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 0.08em;
+      }
+
+      .spec-divider {
+        width: 36px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--gold-dark), var(--gold-rich));
+      }
+
+      .spec-description {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.72rem, 1.7vw, 0.87rem);
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* ── FOUNDER ── */
+      /* ── FOUNDER ── */
+      .founder {
+        background: var(--bg);
+        padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem);
+        perspective: 1200px;
+      }
+
+      .founder-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: clamp(220px, 30%, 320px) 1fr;
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: center;
+        border: 1px solid var(--border);
+        padding: clamp(2rem, 3vw, 3rem);
+        background: rgba(30, 0, 0, 0.6);
+        position: relative;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        transition:
+          transform 0.6s ease,
+          box-shadow 0.6s ease;
+        box-shadow:
+          0 20px 60px rgba(0, 0, 0, 0.6),
+          0 0 0 1px rgba(197, 160, 40, 0.15),
+          inset 0 1px 0 rgba(197, 160, 40, 0.12);
+      }
+
+      /* Animated diagonal mirror-gold sweep */
+      .founder-container::before {
+        content: "";
+        position: absolute;
+        inset: -50%;
+        background: linear-gradient(
+          115deg,
+          transparent 30%,
+          rgba(197, 160, 40, 0.06) 40%,
+          rgba(255, 215, 0, 0.14) 47%,
+          rgba(253, 238, 163, 0.18) 50%,
+          rgba(255, 215, 0, 0.14) 53%,
+          rgba(197, 160, 40, 0.06) 60%,
+          transparent 70%
+        );
+        transform: translateX(-100%);
+        animation: mirrorSweep 4s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      @keyframes mirrorSweep {
+        0% {
+          transform: translateX(-100%) rotate(0deg);
+        }
+        40% {
+          transform: translateX(100%) rotate(0deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(0deg);
+        }
+      }
+
+      /* Subtle gold ambient glow corners */
+      .founder-container::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 40% at 0% 0%,
+            rgba(197, 160, 40, 0.07) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 100% 100%,
+            rgba(197, 160, 40, 0.05) 0%,
+            transparent 60%
+          );
+        pointer-events: none;
+      }
+
+      /* Portrait frame wrapper */
+      .founder-portrait {
+        position: relative;
+        flex-shrink: 0;
+        align-self: stretch;
+        display: flex;
+        align-items: stretch;
+      }
+
+      /* Thick gold accent frame */
+      .founder-portrait::before {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border: 3px solid transparent;
+        background:
+          linear-gradient(#1a0000, #1a0000) padding-box,
+          linear-gradient(
+              145deg,
+              #7a5a10 0%,
+              #c8922a 20%,
+              #fdeea3 35%,
+              #ffd700 50%,
+              #fdeea3 65%,
+              #c8922a 80%,
+              #7a5a10 100%
+            )
+            border-box;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Corner ornament brackets */
+      .founder-portrait::after {
+        content: "";
+        position: absolute;
+        inset: -14px;
+        border: 1px solid rgba(197, 160, 40, 0.4);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Gold corner accents via box shadow */
+      .founder-corner-tl,
+      .founder-corner-tr,
+      .founder-corner-bl,
+      .founder-corner-br {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        z-index: 2;
+      }
+      .founder-corner-tl {
+        top: -14px;
+        left: -14px;
+        border-top: 2px solid #ffd700;
+        border-left: 2px solid #ffd700;
+      }
+      .founder-corner-tr {
+        top: -14px;
+        right: -14px;
+        border-top: 2px solid #ffd700;
+        border-right: 2px solid #ffd700;
+      }
+      .founder-corner-bl {
+        bottom: -14px;
+        left: -14px;
+        border-bottom: 2px solid #ffd700;
+        border-left: 2px solid #ffd700;
+      }
+      .founder-corner-br {
+        bottom: -14px;
+        right: -14px;
+        border-bottom: 2px solid #ffd700;
+        border-right: 2px solid #ffd700;
+      }
+
+      .founder-image {
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        position: relative;
+        z-index: 1;
+        filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.7))
+          drop-shadow(0 0 20px rgba(139, 0, 0, 0.3));
+      }
+
+      .founder-label {
+        font-family: "Raleway", sans-serif;
+        font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+        font-weight: 600;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--gold-rich);
+        margin-bottom: 0.8rem;
+        opacity: 0.9;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .founder-label::before,
+      .founder-label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(197, 160, 40, 0.5)
+        );
+      }
+      .founder-label::after {
+        background: linear-gradient(
+          90deg,
+          rgba(197, 160, 40, 0.5),
+          transparent
+        );
+      }
+
+      .founder-quote {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(0.92rem, 2.2vw, 1.18rem);
+        color: var(--muted);
+        line-height: 1.85;
+        border-left: 3px solid;
+        border-image: linear-gradient(180deg, #ffd700, #7a5a10) 1;
+        padding-left: 1.2rem;
+        margin-bottom: 1.4rem;
+        position: relative;
+      }
+
+      .founder-name {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        background: linear-gradient(
+          135deg,
+          #7a5a10 0%,
+          #c8922a 15%,
+          #fdeea3 35%,
+          #ffd700 50%,
+          #fdeea3 65%,
+          #c8922a 85%,
+          #7a5a10 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: goldShimmerText 3s linear infinite;
+        margin-bottom: 0.4rem;
+      }
+
+      @keyframes goldShimmerText {
+        0% {
+          background-position: 0% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+
+      .founder-title {
+        font-family: "Lato", sans-serif;
+        font-size: clamp(0.72rem, 1.6vw, 0.85rem);
+        color: var(--muted);
+        margin-bottom: 1rem;
+        letter-spacing: 0.04em;
+      }
+
+      .founder-credentials {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.72rem, 1.6vw, 0.85rem);
+        color: rgba(240, 200, 160, 0.75);
+        line-height: 1.7;
+      }
+
+      /* ── CTA ── */
+      .cta {
+        background: linear-gradient(
+          135deg,
+          #1a0000 0%,
+          #2e0000 50%,
+          #1a0000 100%
+        );
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+        padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem);
+      }
+
+      .cta-heading {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.4rem, 4vw, 2.4rem);
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        background: linear-gradient(
+          135deg,
+          #c8922a 0%,
+          #fdeea3 40%,
+          #ffd700 50%,
+          #fdeea3 60%,
+          #c8922a 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+
+      .cta-divider {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold-rich),
+          transparent
+        );
+        margin: 0 auto 1.2rem;
+      }
+
+      .cta-body {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.82rem, 2vw, 1rem);
+        color: var(--muted);
+        max-width: 50ch;
+        margin: 0 auto 1.8rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 1.2rem;
+      }
+
+      .cta-contact {
+        font-family: "Lato", sans-serif;
+        font-size: clamp(0.72rem, 1.7vw, 0.85rem);
+        color: var(--muted);
+      }
+
+      .cta-contact a {
+        color: var(--gold-rich);
+        border-bottom: 1px solid rgba(184, 147, 42, 0.3);
+        transition: border-color 0.3s;
+      }
+      .cta-contact a:hover {
+        border-color: var(--gold-rich);
+      }
+
+      /* ── FOOTER ── */
+      .footer {
+        background: #2a0000;
+        border-top: 2px solid var(--gold-dark);
+        padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 4vw, 2.5rem)
+          clamp(1rem, 2vw, 1.5rem);
+      }
+
+      .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: clamp(1.5rem, 4vw, 3rem);
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-column h3 {
+        font-family: "Cinzel", serif;
+        font-size: clamp(0.9rem, 2vw, 1.15rem);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        background: linear-gradient(
+          135deg,
+          #c8922a 0%,
+          #fdeea3 40%,
+          #ffd700 50%,
+          #fdeea3 60%,
+          #c8922a 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+      }
+
+      .footer-gold-line {
+        width: 40px;
+        height: 1px;
+        background: var(--gold-dark);
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-tagline {
+        font-size: clamp(0.7rem, 1.6vw, 0.82rem);
+        color: var(--muted);
+        margin-bottom: 0.6rem;
+      }
+
+      .house-of-kel {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: clamp(0.65rem, 1.5vw, 0.78rem);
+        color: var(--gold-dark);
+        margin-bottom: 0.6rem;
+      }
+
+      .house-of-kel-fleur {
+        opacity: 0.7;
+      }
+      .house-of-kel-line {
+        flex: 1;
+        height: 1px;
+        background: var(--gold-dark);
+        opacity: 0.4;
+      }
+
+      .serving {
+        font-size: clamp(0.65rem, 1.4vw, 0.75rem);
+        color: rgba(240, 200, 160, 0.55);
+        line-height: 1.6;
+      }
+
+      .footer-heading {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: clamp(0.72rem, 1.6vw, 0.85rem);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold-rich);
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-column p,
+      .footer-column a {
+        font-size: clamp(0.72rem, 1.6vw, 0.82rem);
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .footer-column a:hover {
+        color: var(--gold-rich);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 0.8rem;
+      }
+      .social-icons a {
+        color: var(--gold-dark);
+        transition: color 0.3s;
+      }
+      .social-icons a:hover {
+        color: var(--gold-pure);
+      }
+      .social-icons svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      .footer-divider {
+        max-width: 1000px;
+        margin: 0 auto 1rem;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--border),
+          transparent
+        );
+      }
+
+      .footer-legal {
+        max-width: 1000px;
+        margin: 0 auto;
+        font-size: clamp(0.62rem, 1.4vw, 0.72rem);
+        color: rgba(240, 200, 160, 0.4);
+        text-align: center;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 480px) {
+        .hero-buttons {
+          gap: 0.5rem;
+        }
+        .btn {
+          padding: 0.65rem 1rem;
+          font-size: 0.65rem;
+        }
+        .spec-grid {
+          grid-template-columns: 1fr;
+        }
+        .spec-card:nth-child(n) {
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+        }
+        .spec-card:last-child {
+          border-bottom: none;
+        }
+        .founder-container {
+          grid-template-columns: 1fr;
+        }
+        .founder-portrait {
+          max-width: 220px;
+          margin: 0 auto;
+          min-height: 280px;
+        }
+        .founder-image {
+          min-height: 280px;
+        }
+        .footer-container {
+          grid-template-columns: 1fr;
+        }
+        .venture-card {
+          grid-template-columns: 56px 1fr;
+        }
+        .v-icon-col {
+          padding: 0.5rem;
+        }
+      }
+
+      @media (max-width: 344px) {
+        .hero-title {
+          font-size: 2.4rem;
+          letter-spacing: 0.1em;
+        }
+        .hero-subtitle {
+          font-size: 0.78rem;
+          letter-spacing: 0.2em;
+        }
+        .btn {
+          padding: 0.55rem 0.8rem;
+          letter-spacing: 0.1em;
+        }
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        .nav-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (min-width: 600px) and (max-width: 900px) {
+        .spec-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .founder-container {
+          grid-template-columns: 220px 1fr;
+        }
+        .footer-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-height: 500px) and (orientation: landscape) {
+        .hero {
+          min-height: auto;
+          padding: 2rem 1rem;
+        }
+        .hero-title {
+          font-size: 2.2rem;
+        }
+        .hero-body {
+          display: none;
+        }
+        .hero-divider-luxury {
+          display: none;
+        }
+      }
+
+      @media (min-width: 812px) and (max-width: 960px) {
+        .nav-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
   </head>
+
   <body>
     <main>
+      <!-- HERO -->
       <section class="hero">
         <div class="hero-content">
-          <!-- <div class="house-of-kel">
-          <span class="house-of-kel-fleur">⚜</span>
-          <div class="house-of-kel-line"></div>
-          <span>The House of Kel LLC</span>
-          <div class="house-of-kel-line"></div>
-          <span class="house-of-kel-fleur">⚜</span>
-         </div> -->
-          <h1 class="hero-title cinzel">IMPERIO</h1>
-          <h2 class="hero-subtitle cinzel">TALENT SOLUTIONS</h2>
+          <h1 class="hero-title">IMPERIO</h1>
+          <h2 class="hero-subtitle">Talent Solutions</h2>
+
           <div class="hero-divider-luxury">
             <svg
               width="400"
@@ -78,212 +1301,204 @@
               xmlns="http://www.w3.org/2000/svg"
             >
               <defs>
-                <linearGradient
-                  id="goldGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="0%"
-                >
-                  <stop
-                    offset="0%"
-                    style="stop-color: #8d5a1b; stop-opacity: 1"
-                  />
-                  <stop
-                    offset="25%"
-                    style="stop-color: #e7aa51; stop-opacity: 1"
-                  />
-                  <stop
-                    offset="50%"
-                    style="stop-color: #ffe499; stop-opacity: 1"
-                  />
-                  <stop
-                    offset="75%"
-                    style="stop-color: #e7aa51; stop-opacity: 1"
-                  />
-                  <stop
-                    offset="100%"
-                    style="stop-color: #8d5a1b; stop-opacity: 1"
-                  />
+                <linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color: #8d5a1b" />
+                  <stop offset="25%" style="stop-color: #e7aa51" />
+                  <stop offset="50%" style="stop-color: #ffe499" />
+                  <stop offset="75%" style="stop-color: #e7aa51" />
+                  <stop offset="100%" style="stop-color: #8d5a1b" />
                 </linearGradient>
               </defs>
-              <polygon points="0,10 15,5 15,15" fill="url(#goldGradient)" />
-              <rect
-                x="20"
-                y="9"
-                width="165"
-                height="2"
-                fill="url(#goldGradient)"
-              />
-              <polygon
-                points="195,10 200,5 205,10 200,15"
-                fill="url(#goldGradient)"
-              />
-              <rect
-                x="215"
-                y="9"
-                width="165"
-                height="2"
-                fill="url(#goldGradient)"
-              />
-              <polygon points="385,5 385,15 400,10" fill="url(#goldGradient)" />
+              <polygon points="0,10 15,5 15,15" fill="url(#gg)" />
+              <rect x="20" y="9" width="165" height="2" fill="url(#gg)" />
+              <polygon points="195,10 200,5 205,10 200,15" fill="url(#gg)" />
+              <rect x="215" y="9" width="165" height="2" fill="url(#gg)" />
+              <polygon points="385,5 385,15 400,10" fill="url(#gg)" />
             </svg>
           </div>
-          <div class="span_staff sub-header">
-            <span>Staffing & Recruiting Solutions in Central Texas</span>
-          </div>
 
-          <p class="hero-headline montserrat-semibold">
-            CONNECT TALENT. BUILD CAREERS. STRENGTHEN TEAMS.
+          <p class="hero-tagline">
+            Connect Talent. Build Careers. Strengthen Teams.
           </p>
-          <p class="hero-body lato-light">
-            Imperio Talent Solutions is a Killeen-based staffing and recruiting
-            firm serving Central Texas. We provide contract, temporary, and
-            direct-hire workforce solutions across IT, skilled trades,
-            healthcare, logistics, and administrative sectors.
-            <br />
-            <br />
 
+          <p class="hero-body">
+            SDVOSB staffing and recruiting firm serving Central Texas and
+            nationwide. Cleared professionals, skilled trades, healthcare, and
+            logistics.
             <span
-              >SBA Certified SDVOSB | Texas VetHUB Certified | TVC Verified
-              Veteran-Owned Business</span
+              >SBA Certified SDVOSB &nbsp;|&nbsp; VetHUB Certified &nbsp;|&nbsp;
+              Texas Veterans Commission (TVC) Verified</span
             >
           </p>
+
           <div class="hero-buttons">
-            <a href="employers.html" class="btn btn-red montserrat-semibold"
-              >EMPLOYERS</a
-            >
-            <a href="job-seekers.html" class="btn btn-gold montserrat-semibold"
-              >JOB SEEKERS</a
-            >
-            <a href="contractor.html" class="btn btn-red montserrat-semibold"
-              >Contracting</a
-            >
+            <a href="employers.html" class="btn btn-red">Employers</a>
+            <a href="job-seekers.html" class="btn btn-gold">Job Seekers</a>
+            <a href="contractor.html" class="btn btn-red">Contracting</a>
           </div>
         </div>
       </section>
 
+      <!-- NAV BUTTONS -->
+      <nav class="nav-section" aria-label="Site navigation">
+        <div class="nav-grid">
+          <a class="nav-btn" href="employers.html">
+            <span class="c tl"></span><span class="c tr"></span>
+            <span class="c bl"></span><span class="c br"></span>
+            <span class="nav-btn-icon">🏢</span>
+            <span class="nav-btn-label">For Employers</span>
+          </a>
+          <a class="nav-btn" href="job-seekers.html">
+            <span class="c tl"></span><span class="c tr"></span>
+            <span class="c bl"></span><span class="c br"></span>
+            <span class="nav-btn-icon">👤</span>
+            <span class="nav-btn-label">Job Seekers</span>
+          </a>
+          <a class="nav-btn" href="contractor.html">
+            <span class="c tl"></span><span class="c tr"></span>
+            <span class="c bl"></span><span class="c br"></span>
+            <span class="nav-btn-icon">🏛️</span>
+            <span class="nav-btn-label">Federal Contracting</span>
+          </a>
+          <a
+            class="nav-btn"
+            href="https://thehouseofkel.com"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="c tl"></span><span class="c tr"></span>
+            <span class="c bl"></span><span class="c br"></span>
+            <span class="nav-btn-icon">⚜️</span>
+            <span class="nav-btn-label">The House of Kel</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- WHO WE SERVE -->
       <section class="who-we-serve">
-        <div class="section-label">OUR COMMITMENT</div>
-        <h2 class="section-heading cinzel">WHO WE SERVE</h2>
-        <div class="cards-container">
-          <article class="card">
-            <div class="card-icon">👤</div>
-            <h3 class="card-title montserrat-semibold">FOR JOB SEEKERS</h3>
-            <ul class="lato-regular">
-              <li>Career transition guidance for veterans</li>
-              <li>Resume optimization and interview prep</li>
-              <li>Direct connections to hiring companies</li>
-              <li>Certification and training resources</li>
-              <li>Ongoing career development support</li>
-            </ul>
+        <div class="section-label">Our Commitment</div>
+        <h2 class="section-heading gold-text">Who We Serve</h2>
+        <div class="venture-list">
+          <article class="venture-card">
+            <div class="v-icon-col"><span class="ico">👤</span></div>
+            <div class="v-content">
+              <div class="v-title">For Job Seekers</div>
+              <ul class="v-list">
+                <li>Career transition guidance for veterans</li>
+                <li>Resume optimization and interview prep</li>
+                <li>Direct connections to hiring companies</li>
+                <li>Certification and training resources</li>
+                <li>Ongoing career development support</li>
+              </ul>
+            </div>
           </article>
-          <article class="card">
-            <div class="card-icon">🏢</div>
-            <h3 class="card-title montserrat-semibold">FOR EMPLOYERS</h3>
-            <ul class="lato-regular">
-              <li>Access to pre-vetted, certified talent</li>
-              <li>Reduced hiring time and costs</li>
-              <li>Reliable, disciplined professionals</li>
-              <li>Specialized industry expertise</li>
-              <li>Ongoing placement support</li>
-            </ul>
+          <article class="venture-card">
+            <div class="v-icon-col"><span class="ico">🏢</span></div>
+            <div class="v-content">
+              <div class="v-title">For Employers</div>
+              <ul class="v-list">
+                <li>Access to pre-vetted, certified talent</li>
+                <li>Reduced hiring time and costs</li>
+                <li>Reliable, disciplined professionals</li>
+                <li>Specialized industry expertise</li>
+                <li>Ongoing placement support</li>
+              </ul>
+            </div>
           </article>
-          <article class="card">
-            <div class="card-icon">🎓</div>
-            <h3 class="card-title montserrat-semibold">
-              FOR TRAINING PARTNERS
-            </h3>
-            <ul class="lato-regular">
-              <li>Direct pipeline to employment opportunities</li>
-              <li>Enhanced graduate placement rates</li>
-              <li>Industry-aligned curriculum feedback</li>
-              <li>Collaborative talent development</li>
-              <li>Mutual growth partnerships</li>
-            </ul>
+          <article class="venture-card">
+            <div class="v-icon-col"><span class="ico">🎓</span></div>
+            <div class="v-content">
+              <div class="v-title">For Training Partners</div>
+              <ul class="v-list">
+                <li>Direct pipeline to employment opportunities</li>
+                <li>Enhanced graduate placement rates</li>
+                <li>Industry-aligned curriculum feedback</li>
+                <li>Collaborative talent development</li>
+                <li>Mutual growth partnerships</li>
+              </ul>
+            </div>
           </article>
         </div>
       </section>
 
+      <!-- SPECIALIZATIONS -->
       <section class="specializations">
-        <div class="section-label">ELITE PLACEMENT</div>
-        <h2 class="section-heading cinzel">OUR SPECIALIZATIONS</h2>
-        <p class="specializations-subheading montserrat-light">
-          Precision talent placement across high-demand industries
-        </p>
-        <div class="spec-grid">
-          <article class="spec-card">
-            <div class="spec-icon">🔐</div>
-            <h3 class="spec-title montserrat-semibold">IT & Cybersecurity</h3>
-            <div class="spec-divider"></div>
-            <p class="spec-description lato-light">
-              Cloud architects, security analysts, network engineers, and IT
-              professionals with active clearances and industry certifications.
-            </p>
-          </article>
-          <article class="spec-card">
-            <div class="spec-icon">🔧</div>
-            <h3 class="spec-title montserrat-semibold">HVAC Technicians</h3>
-            <div class="spec-divider"></div>
-            <p class="spec-description lato-light">
-              EPA-certified technicians skilled in installation, maintenance,
-              and repair of commercial and residential HVAC systems.
-            </p>
-          </article>
-          <article class="spec-card">
-            <div class="spec-icon">⚕️</div>
-            <h3 class="spec-title montserrat-semibold">
-              Medical Professionals
-            </h3>
-            <div class="spec-divider"></div>
-            <p class="spec-description lato-light">
-              Licensed nurses, medical technicians, and healthcare
-              administrators with proven clinical excellence and patient care
-              expertise.
-            </p>
-          </article>
-          <article class="spec-card">
-            <div class="spec-icon">📦</div>
-            <h3 class="spec-title montserrat-semibold">
-              Logistics & Supply Chain
-            </h3>
-            <div class="spec-divider"></div>
-            <p class="spec-description lato-light">
-              Supply chain managers, logistics coordinators, and warehouse
-              operations specialists with military precision and efficiency.
-            </p>
-          </article>
+        <div class="spec-wrap">
+          <div class="section-label">Elite Placement</div>
+          <h2 class="section-heading gold-text">Our Specializations</h2>
+          <div class="spec-grid">
+            <article class="spec-card">
+              <span class="spec-icon">🔐</span>
+              <div class="spec-title">IT &amp; Cybersecurity</div>
+              <div class="spec-divider"></div>
+              <p class="spec-description">
+                Cloud architects, security analysts, network engineers, and IT
+                professionals with active clearances and industry
+                certifications.
+              </p>
+            </article>
+            <article class="spec-card">
+              <span class="spec-icon">🔧</span>
+              <div class="spec-title">HVAC Technicians</div>
+              <div class="spec-divider"></div>
+              <p class="spec-description">
+                EPA-certified technicians skilled in installation, maintenance,
+                and repair of commercial and residential HVAC systems.
+              </p>
+            </article>
+            <article class="spec-card">
+              <span class="spec-icon">⚕️</span>
+              <div class="spec-title">Medical Professionals</div>
+              <div class="spec-divider"></div>
+              <p class="spec-description">
+                Licensed nurses, medical technicians, and healthcare
+                administrators with proven clinical excellence and patient care
+                expertise.
+              </p>
+            </article>
+            <article class="spec-card">
+              <span class="spec-icon">📦</span>
+              <div class="spec-title">Logistics &amp; Supply Chain</div>
+              <div class="spec-divider"></div>
+              <p class="spec-description">
+                Supply chain managers, logistics coordinators, and warehouse
+                operations specialists with military precision and efficiency.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
+      <!-- FOUNDER -->
       <section class="founder">
-        <div class="founder-container">
-          <div class="founder-image-wrapper">
-            <!-- <img src="images/ITS_Older.jpg" alt="Anthony K. Kelley - Founder" class="founder-image"> -->
+        <div class="founder-container" id="founderCard">
+          <div class="founder-portrait">
+            <span class="founder-corner-tl"></span>
+            <span class="founder-corner-tr"></span>
+            <span class="founder-corner-bl"></span>
+            <span class="founder-corner-br"></span>
             <img
-              src="images/suitedPortrait.png"
-              alt="Anthony K. Kelley - Founder"
+              src="./images/suitNoLabel.png"
+              alt="Anthony K. Kelley Sr. - Founder"
               class="founder-image"
             />
-            <!-- <img src="https://i.imgur.com/OE4ogZ7_d.webp?maxwidth=760&fidelity=grand" alt="Anthony K. Kelley - Founder" class="founder-image" onerror="this.style.display='none';"> -->
           </div>
           <div class="founder-content">
-            <div class="founder-label">FOUNDER</div>
-            <blockquote class="founder-quote lato-light">
+            <div class="founder-label">Founder</div>
+            <blockquote class="founder-quote">
               After 21 years in the Army, I experienced firsthand how difficult
               it is to translate military skills and certifications into
-              civilian opportunities. That's why I founded The House of Kel - to
+              civilian opportunities. That's why I founded The House of Kel — to
               build ventures that help people live better lives. Imperio Talent
               Solutions is our commitment to serving veterans and professionals
               seeking meaningful career transitions. It's not just a business.
               It's a mission.
             </blockquote>
-            <div class="founder-signature"></div>
-            <h3 class="founder-name cinzel">ANTHONY K. KELLEY</h3>
-            <p class="founder-title lato-regular">
-              Founder, The House of Kel | Imperio Talent Solutions
+            <h3 class="founder-name">Anthony K. Kelley</h3>
+            <p class="founder-title">
+              Founder, The House of Kel &nbsp;|&nbsp; Imperio Talent Solutions
             </p>
-            <p class="founder-credentials lato-light">
+            <p class="founder-credentials">
               His background spans IT systems, compliance, and enterprise
               operations — allowing Imperio to effectively evaluate technical
               and skilled talent across industries.
@@ -292,37 +1507,60 @@
         </div>
       </section>
 
+      <script>
+        const card = document.getElementById("founderCard");
+        if (card && window.matchMedia("(hover: hover)").matches) {
+          card.addEventListener("mousemove", (e) => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            card.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 5}deg) translateZ(10px)`;
+            card.style.boxShadow = `
+          ${-x * 20}px ${y * 20}px 60px rgba(0,0,0,.7),
+          0 0 40px rgba(197,160,40,.12),
+          inset 0 1px 0 rgba(197,160,40,.15)`;
+          });
+          card.addEventListener("mouseleave", () => {
+            card.style.transform = "rotateY(0deg) rotateX(0deg) translateZ(0)";
+            card.style.boxShadow = "";
+          });
+        }
+      </script>
+
+      <!-- CTA -->
       <section class="cta">
-        <h2 class="cta-heading cinzel">READY TO CONNECT?</h2>
+        <h2 class="cta-heading">Ready to Connect?</h2>
         <div class="cta-divider"></div>
-        <p class="cta-body lato-light">
+        <p class="cta-body">
           Whether you're seeking your next career move or looking for
           exceptional talent, we're here to help.
         </p>
         <div class="cta-buttons">
-          <a href="job-seekers.html" class="btn btn-gold montserrat-semibold"
-            >JOB SEEKERS</a
-          >
-          <a href="employers.html" class="btn btn-red montserrat-semibold"
-            >EMPLOYERS</a
-          >
+          <a href="job-seekers.html" class="btn btn-gold">Job Seekers</a>
+          <a href="employers.html" class="btn btn-red">Employers</a>
         </div>
-        <p class="cta-contact lato-regular">
+        <p class="cta-contact">
           Or reach us directly at
-          <a href="mailto:info@imperiovita.co">info@imperiovita.co</a>
+          <a
+            href="/cdn-cgi/l/email-protection#caa3a4aca58aa3a7baafb8a3a5bca3beabe4a9a5"
+            ><span
+              class="__cf_email__"
+              data-cfemail="3c55525a537c55514c594e55534a55485d125f53"
+              >[email&#160;protected]</span
+            ></a
+          >
         </p>
       </section>
 
+      <!-- FOOTER -->
       <footer class="footer">
         <div class="footer-container">
           <div class="footer-column">
-            <h3 class="cinzel">IMPERIO<br />TALENT<br />SOLUTIONS</h3>
+            <h3>IMPERIO<br />TALENT<br />SOLUTIONS</h3>
             <div class="footer-gold-line"></div>
-            <p class="footer-tagline lato-regular">
+            <p class="footer-tagline">
               Elite placement for exceptional professionals
             </p>
-            <!-- <p class="footer-house cormorant-italic">The House of Kel</p> -->
-            <!----------------Down--------------------------->
             <div class="house-of-kel">
               <span class="house-of-kel-fleur">⚜</span>
               <div class="house-of-kel-line"></div>
@@ -330,24 +1568,30 @@
               <div class="house-of-kel-line"></div>
               <span class="house-of-kel-fleur">⚜</span>
             </div>
-            <!-----------------Up-------------------------->
             <div class="serving">
               <p>
-                Employment & Staffing Agency Serving Killeen, Temple, Belton,
-                Harker Heights, and Central Texas
+                Employment &amp; Staffing Agency Serving Killeen, Temple,
+                Belton, Harker Heights, and Central Texas
               </p>
             </div>
           </div>
           <div class="footer-column">
-            <h4 class="footer-heading montserrat-semibold">CONTACT</h4>
-            <p class="lato-regular">
-              <a href="mailto:info@imperiovita.co">info@imperiovita.co</a>
+            <h4 class="footer-heading">Contact</h4>
+            <p>
+              <a
+                href="/cdn-cgi/l/email-protection#ee87808881ae87839e8b9c878198879a8fc08d81"
+                ><span
+                  class="__cf_email__"
+                  data-cfemail="ee87808881ae87839e8b9c878198879a8fc08d81"
+                  >[email&#160;protected]</span
+                ></a
+              >
             </p>
-            <p class="lato-regular">Killeen, Texas</p>
-            <p class="lato-regular">Serving Central Texas & Beyond</p>
+            <p>Killeen, Texas</p>
+            <p>Serving Central Texas &amp; Beyond</p>
           </div>
           <div class="footer-column">
-            <h4 class="footer-heading montserrat-semibold">CONNECT</h4>
+            <h4 class="footer-heading">Connect</h4>
             <div class="social-icons">
               <a
                 href="https://www.linkedin.com/in/anthony-k-kelley-sr"
@@ -363,17 +1607,11 @@
                 >
                   <path
                     d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                  />
-                </svg>
-              </a>
+                  /></svg
+              ></a>
             </div>
           </div>
         </div>
-        <div class="footer-divider"></div>
-        <p class="footer-legal lato-regular">
-          © 2025 The House of Kel LLC. All Rights Reserved. Imperio Talent
-          Solutions is a DBA of The House of Kel LLC
-        </p>
       </footer>
     </main>
   </body>
