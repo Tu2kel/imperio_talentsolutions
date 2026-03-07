@@ -1199,6 +1199,8 @@
       }
 
       /* ── RESPONSIVE ── */
+
+      /* Fold 6 folded portrait + all small phones */
       @media (max-width: 480px) {
         .hero-buttons {
           gap: 0.5rem;
@@ -1217,17 +1219,33 @@
         .spec-card:last-child {
           border-bottom: none;
         }
+
+        /* Fold 6 folded: suit → content → uniform stacked */
         .founder-container {
           grid-template-columns: 1fr;
+          grid-template-rows: auto auto auto;
         }
         .founder-portrait {
-          max-width: 220px;
+          width: 100%;
+          max-width: 280px;
+          height: 340px;
           margin: 0 auto;
-          min-height: 280px;
+          align-self: auto;
+        }
+        .founder-portrait-mil {
+          width: 100%;
+          max-width: 280px;
+          height: 340px;
+          margin: 0 auto;
+          align-self: auto;
         }
         .founder-image {
-          min-height: 280px;
+          min-height: unset;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
         }
+
         .footer-container {
           grid-template-columns: 1fr;
         }
@@ -1239,6 +1257,7 @@
         }
       }
 
+      /* Fold 6 cover screen absolute minimum */
       @media (max-width: 344px) {
         .hero-title {
           font-size: 2.4rem;
@@ -1259,20 +1278,62 @@
         .nav-grid {
           grid-template-columns: 1fr 1fr;
         }
+        .founder-portrait,
+        .founder-portrait-mil {
+          max-width: 240px;
+          height: 300px;
+        }
       }
 
+      /* Fold 6 unfolded portrait (~882px) + tablets */
       @media (min-width: 600px) and (max-width: 900px) {
         .spec-grid {
           grid-template-columns: repeat(2, 1fr);
         }
+
+        /* Two portraits side by side, content full width below */
         .founder-container {
-          grid-template-columns: 220px 1fr;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto auto;
         }
+        .founder-portrait {
+          height: 380px;
+          max-width: 100%;
+          margin: 0;
+          align-self: auto;
+        }
+        .founder-portrait-mil {
+          height: 380px;
+          max-width: 100%;
+          align-self: auto;
+        }
+        .founder-content {
+          grid-column: 1 / -1;
+        }
+
         .footer-container {
           grid-template-columns: 1fr 1fr;
         }
       }
 
+      /* Fold 6 unfolded landscape (~1012px wide) — restore 3-col */
+      @media (min-width: 900px) and (max-width: 1100px) {
+        .founder-container {
+          grid-template-columns: 240px 1fr 240px;
+        }
+        .founder-portrait,
+        .founder-portrait-mil {
+          height: auto;
+          max-width: 100%;
+          align-self: start;
+        }
+        .founder-portrait-mil {
+          align-self: stretch;
+        }
+      }
+
+      /* Landscape short screens (Fold 6 folded landscape) */
+      /* Fold 6 folded landscape */
       @media (max-height: 500px) and (orientation: landscape) {
         .hero {
           min-height: auto;
@@ -1287,8 +1348,41 @@
         .hero-divider-luxury {
           display: none;
         }
+
+        /* Force 3-col on landscape, tighter portraits */
+        .founder-container {
+          grid-template-columns: 160px 1fr 160px;
+          padding: 1rem;
+          gap: 1rem;
+        }
+        .founder-portrait,
+        .founder-portrait-mil {
+          height: 220px;
+        }
+        .founder-image {
+          min-height: unset;
+          height: 100%;
+        }
+
+        /* Tighten content text so it fits */
+        .founder-quote {
+          font-size: 0.78rem;
+          line-height: 1.6;
+          margin-bottom: 0.8rem;
+        }
+        .founder-name {
+          font-size: 1rem;
+        }
+        .founder-title,
+        .founder-credentials {
+          font-size: 0.7rem;
+        }
+        .founder-label {
+          margin-bottom: 0.4rem;
+        }
       }
 
+      /* Mid tablet nav fix */
       @media (min-width: 812px) and (max-width: 960px) {
         .nav-grid {
           grid-template-columns: repeat(3, 1fr);
