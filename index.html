@@ -163,6 +163,33 @@
         background-clip: text;
       }
 
+      .hero-crest {
+        position: fixed;
+        width: clamp(240px, 65vw, 500px);
+        top: 18%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 0;
+        animation: crestGlow 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes crestGlow {
+        0% {
+          opacity: 0.07;
+          filter: drop-shadow(0 0 0px transparent);
+        }
+        100% {
+          opacity: 0.5;
+          filter: drop-shadow(0 0 28px rgba(197, 160, 40, 0.55));
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
       /* ── HERO ── */
       .hero {
         min-height: 100svh;
@@ -170,6 +197,8 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        position: relative;
+        overflow: hidden;
         background:
           radial-gradient(
             ellipse 80% 60% at 50% 30%,
@@ -1395,6 +1424,12 @@
     <main>
       <!-- HERO -->
       <section class="hero">
+        <img
+          src="./images/ITS_Logo.png"
+          alt=""
+          class="hero-crest"
+          aria-hidden="true"
+        />
         <div class="hero-content">
           <h1 class="hero-title">IMPERIO</h1>
           <h2 class="hero-subtitle">Talent Solutions</h2>
